@@ -1,0 +1,14 @@
+C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\bin\Debug\netstandard2.0\NEUVolunteer.deps.json
+C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\bin\Debug\netstandard2.0\NEUVolunteer.dll
+C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\bin\Debug\netstandard2.0\ref\NEUVolunteer.dll
+C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\bin\Debug\netstandard2.0\NEUVolunteer.pdb
+C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.csprojAssemblyReference.cache
+C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.csproj.CoreCompileInputs.cache
+C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.AssemblyInfoInputs.cache
+C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.AssemblyInfo.cs
+C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.dll
+C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\obj\Debug\netstandard2.0\ref\NEUVolunteer.dll
+C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.pdb
