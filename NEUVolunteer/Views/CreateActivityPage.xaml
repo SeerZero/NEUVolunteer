@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:b="clr-namespace:Behaviors;assembly=Behaviors"
+             xmlns:lm="clr-namespace:NEUVolunteer.Models;assembly=NEUVolunteer"
+             x:Class="NEUVolunteer.Views.CreateActivityPage"
+             BindingContext="{Binding CreateActivityPageViewModel, Source={StaticResource ViewModelLocator}}">
+    <ContentPage.Behaviors>
+        <b:EventHandlerBehavior EventName="Appearing">
+            <b:ActionCollection>
+                <b:InvokeCommandAction Command="{Binding PageAppearingCommand}"/>
+            </b:ActionCollection>
+        </b:EventHandlerBehavior>
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="12"
+                  RowSpacing="4"
+                  ColumnSpacing="12">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" 
+                       Grid.ColumnSpan="2"
+                       Text="请填写活动申报信息"
+                       TextColor="Black"
+                       FontSize="Title"
+                       Margin="0,0,0,8"/>
+
+                <Label Grid.Row="1" Grid.Column="0"
+                       Text="名称"
+                       VerticalOptions="Center"
+                       FontSize="Body"/>
+                <Entry Grid.Row="1" Grid.Column="1"
+                       FontSize="Body"
+                       Text="{Binding ActivityName, Mode=TwoWay}"/>
+
+                <Label Grid.Row="2" Grid.Column="0"
+                       Text="类别"
+                       VerticalOptions="Center"
+                       FontSize="Body"/>
+                <Picker Grid.Row="2" Grid.Column="1"
+                        ItemsSource="{Binding ActivityTypes}"
+                        ItemDisplayBinding="{Binding TypeName}"
+                        SelectedIndex="{Binding ActivityType, Mode=TwoWay}"/>
+
+                <Label Grid.Row="3" Grid.Column="0"
+                       Text="地点"
+                       VerticalOptions="Center"
+                       FontSize="Body"/>
+                <Entry Grid.Row="3" Grid.Column="1"
+                       FontSize="Body"
+                       Text="{Binding ActivityPlace, Mode=TwoWay}"/>
+
+                <Label Grid.Row="4" Grid.Column="0"
+                       Text="简介"
+                       VerticalOptions="Center"
+                       FontSize="Body"/>
+                <Editor Grid.Row="4" Grid.Column="1"
+                        AutoSize="TextChanges"
+                        FontSize="Body"
+                        Text="{Binding ActivityBrief, Mode=TwoWay}"/>
+            </Grid>
+            <Button Text="确认提交"
+                    Margin="8"
+                    CornerRadius="8"
+                    VerticalOptions="EndAndExpand"
+                    FontSize="Body"
+                    Command="{Binding CreateButtonCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

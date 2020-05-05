@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj": {}
+    "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj": {
+    "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj",
+        "projectUniqueName": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj",
         "projectName": "NEUVolunteer.iOS",
-        "projectPath": "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj",
-        "packagesPath": "C:\\Users\\wwei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer.iOS\\obj\\",
+        "projectPath": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj",
+        "packagesPath": "C:\\Users\\tsy529\\.nuget\\packages\\",
+        "outputPath": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\wwei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tsy529\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj": {
-                "projectPath": "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj"
+              "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj": {
+                "projectPath": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj"
               }
             }
           }
@@ -65,21 +65,21 @@
         }
       }
     },
-    "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj": {
+    "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj",
+        "projectUniqueName": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj",
         "projectName": "NEUVolunteer",
-        "projectPath": "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj",
-        "packagesPath": "C:\\Users\\wwei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer\\obj\\",
+        "projectPath": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj",
+        "packagesPath": "C:\\Users\\tsy529\\.nuget\\packages\\",
+        "outputPath": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\wwei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tsy529\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -104,6 +104,14 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Behaviors.Forms": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "MvvmLightLibs": {
+              "target": "Package",
+              "version": "[5.4.1.1, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -117,6 +125,10 @@
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[4.4.0.991265, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.6.292, )"
             }
           },
           "imports": [
@@ -129,7 +141,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="NEUVolunteer.Views.ActivityDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="&quot;雏鹰行动&quot;之筑梦沙柳"
+                   FontSize="Title"
+                   TextColor="Black"/>
+
+                    <BoxView Color="Gray" HeightRequest="1"/>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Row="0" Grid.Column="0" 
+                             Orientation="Vertical">
+                            <Label Text="20" TextColor="DarkOrange" 
+                                   FontSize="18"
+                                   HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="招募人数" TextColor="Black"
+                           HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                        <BoxView Grid.Row="0" Grid.Column="1" 
+                        Color="Gray"
+                         WidthRequest="1"/>
+                        <StackLayout Grid.Row="0" Grid.Column="2" 
+                             Orientation="Vertical">
+                            <Label Text="报名中" TextColor="DeepSkyBlue"
+                                   FontSize="18"
+                                   HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="活动状态" TextColor="Black"
+                                   HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </Grid>
+
+                    <BoxView Color="Gray" HeightRequest="1"/>
+
+                    <StackLayout>
+                        <BoxView Color="Gray" HeightRequest="1"/>
+                        <StackLayout Orientation="Horizontal">
+                            <BoxView Color="DarkSeaGreen" WidthRequest="4" HeightRequest="24"/>
+                            <Label Text="活动基本信息" TextColor="Black"
+                           FontSize="20"
+                           VerticalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                        <BoxView Color="Gray" HeightRequest="1"/>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="活动开始时间 :" TextColor="Black"/>
+                            <Label Text="2020年6月5日(周三) 14:00"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="活动结束时间 :" TextColor="Black"/>
+                            <Label Text="2020年6月5日(周三) 17:30"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="活动地点 :" TextColor="Black"/>
+                            <Label Text="沈阳市苏家屯区沙柳路小学"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="活动类型 :" TextColor="Black"/>
+                            <Label Text="文化传承"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="活动集合时间地点 :" TextColor="Black"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="2020年6月5日(周三) 13:30"/>
+                                <Label Text="浑南校区小西门内侧"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="活动简介 :" TextColor="Black"/>
+                            <Label Text="志愿者们带领沙柳路小学的孩子们进行活动，以室外活动为主。使孩子们于活动中锻炼团队协作能力，于游戏中提高"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="已招募人数 :" TextColor="Black"/>
+                            <Label Text="8" />
+                        </StackLayout>
+
+                        <BoxView Color="Gray" HeightRequest="1"/>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <BoxView Color="Gray" HeightRequest="1"/>
+
+                        <StackLayout Orientation="Horizontal">
+                            <BoxView Color="DarkSeaGreen" WidthRequest="4" HeightRequest="24"/>
+                            <Label Text="负责人信息" TextColor="Black"
+                                   FontSize="20"
+                                   VerticalOptions="CenterAndExpand"/>
+                        </StackLayout>
+
+                        <BoxView Color="Gray" HeightRequest="1"/>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="负责人姓名 :" TextColor="Black"/>
+                            <Label Text="汤圆坨"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="负责人QQ :" TextColor="Black"/>
+                            <Label Text="707627123"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="负责人电话 :" TextColor="Black"/>
+                            <Label Text="18604011234"/>
+                        </StackLayout>
+
+                        <BoxView Color="Gray" HeightRequest="1"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <Button Text="报名"
+                    Margin="8"
+                    CornerRadius="8"
+                    VerticalOptions="EndAndExpand"
+                    FontSize="Body"
+                    Command="{Binding CreateButtonCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
