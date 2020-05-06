@@ -79,5 +79,24 @@ namespace NEUVolunteer.Services.implements
 
         public async Task<Manager> GetManagerAsync(int id) =>
             await Connection.Table<Manager>().FirstOrDefaultAsync(p => p.ManagerId.Equals(id));
+
+        public async Task<Volunteer> GetVolunteerAsync(int id) =>
+            await Connection.Table<Volunteer>().FirstOrDefaultAsync(p => p.VolunteerId.Equals(id));
+
+        public async Task AddVolunteerInApply(int applyId, int volunteerId) {
+            var sql = "insert into VolunteerInApply values (" + applyId + "," + volunteerId + ")";
+            await Connection.QueryAsync<VolunteerInApply>(sql);
+        }
+
+        public async Task DeleteVolunteerInApply(int applyId, int volunteerId) {
+            var sql = "delete from VolunteerInApply where ApplyId=" + applyId + " and VolunteerId=" + volunteerId;
+            await Connection.QueryAsync<VolunteerInApply>(sql);
+        }
+
+        public async Task<bool> IsVolunteerInApply(int applyId, int volunteerId) {
+            var result = await Connection.Table<VolunteerInApply>()
+                .Where(p => p.VolunteerId.Equals(volunteerId) && p.ApplyId.Equals(applyId)).ToListAsync();
+            return (result.Count != 0);
+        }
     }
 }

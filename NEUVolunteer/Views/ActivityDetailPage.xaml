@@ -163,16 +163,16 @@
                     VerticalOptions="EndAndExpand"
                     FontSize="Body"
                     Command="{Binding SignUpButtonCommand}"
-                    IsVisible="False"/>
+                    IsVisible="{Binding IsSignUp}"/>
             <Button Text="取消报名" TextColor="White"
                     BackgroundColor="#2294f0"
                     Margin="8" CornerRadius="8"
                     VerticalOptions="EndAndExpand"
                     FontSize="Body"
                     Command="{Binding CancelButtonCommand}"
-                    IsVisible="False"/>
+                    IsVisible="{Binding IsCancel}"/>
 
-            <Grid IsVisible="True" 
+            <Grid IsVisible="{Binding IsManagerCtrl}" 
                   VerticalOptions="EndAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>

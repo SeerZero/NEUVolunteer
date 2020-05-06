@@ -27,6 +27,14 @@ namespace NEUVolunteer.Services.interfaces
         Task<ActivityInfo> GetActivityInfoAsync(int id);
 
         Task<Manager> GetManagerAsync(int id);
+
+        Task<Volunteer> GetVolunteerAsync(int id);
+
+        Task AddVolunteerInApply(int applyId, int volunteerId);
+
+        Task DeleteVolunteerInApply(int applyId, int volunteerId);
+
+        Task<bool> IsVolunteerInApply(int applyId, int volunteerId);
     }
 
     public static class DBConstants

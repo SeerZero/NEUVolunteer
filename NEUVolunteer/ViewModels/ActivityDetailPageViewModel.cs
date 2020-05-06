@@ -52,10 +52,31 @@ namespace NEUVolunteer.ViewModels
                 await _dbService.InitializeAsync();
             }
 
+            var volunteer = await _dbService.GetVolunteerAsync(1);
+            User.UserId = volunteer.VolunteerId;
+            User.IsManager = false;
             Apply = await _dbService.GetApplyAsync(1);
             ActivityInfo = await _dbService.GetActivityInfoAsync(Apply.ApplyActivityId);
             Manager = await _dbService.GetManagerAsync(Apply.ApplyManagerId);
             TypeName = await _dbService.GetActivityTypeNameAsync(ActivityInfo.ActivityTypeId);
+
+            //判断是否为管理员浏览，控制按钮功能
+            if (User.IsManager) {
+                IsManagerCtrl = true;
+                IsSignUp = false;
+                IsCancel = false;
+            }
+            else {
+                IsManagerCtrl = false;
+                if (await _dbService.IsVolunteerInApply(Apply.ApplyId, User.UserId)) {
+                    IsSignUp = false;
+                    IsCancel = true;
+                }
+                else {
+                    IsSignUp = true;
+                    IsCancel = false;
+                }
+            }
         }
 
         private string _typeName;
@@ -63,6 +84,52 @@ namespace NEUVolunteer.ViewModels
         public string TypeName {
             get => _typeName;
             set => Set(nameof(TypeName), ref _typeName, value);
+        }
+
+        private bool _isSignUp = false;
+
+        public bool IsSignUp {
+            get => _isSignUp;
+            set => Set(nameof(IsSignUp), ref _isSignUp, value);
+        }
+
+        private bool _isCancel = false;
+
+        public bool IsCancel
+        {
+            get => _isCancel;
+            set => Set(nameof(IsCancel), ref _isCancel, value);
+        }
+
+        private bool _isManagerCtrl = false;
+
+        public bool IsManagerCtrl
+        {
+            get => _isManagerCtrl;
+            set => Set(nameof(IsManagerCtrl), ref _isManagerCtrl, value);
+        }
+
+        private RelayCommand _signUpButtonCommand;
+
+        public RelayCommand SignUpButtonCommand =>
+            _signUpButtonCommand ?? (_signUpButtonCommand = new RelayCommand(async () => await SignUpButtonCommandFunction()));
+
+        internal async Task SignUpButtonCommandFunction() {
+            await _dbService.AddVolunteerInApply(Apply.ApplyId, User.UserId);
+            IsSignUp = false;
+            IsCancel = true;
+        }
+
+        private RelayCommand _cancelButtonCommand;
+
+        public RelayCommand CancelButtonCommand =>
+            _cancelButtonCommand ?? (_cancelButtonCommand = new RelayCommand(async () => await CancelButtonCommandFunction()));
+
+        internal async Task CancelButtonCommandFunction()
+        {
+            await _dbService.DeleteVolunteerInApply(Apply.ApplyId, User.UserId);
+            IsSignUp = true;
+            IsCancel = false;
         }
     }
 }
