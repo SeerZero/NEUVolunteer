@@ -25,8 +25,14 @@ namespace NEUVolunteer.Models
         [SQLite.Column("EndTime")]
         public string EndTime { get; set; }
         
-        [SQLite.Column("Number")]
-        public int Number { get; set; }
+        [SQLite.Column("RequestNumber")]
+        public int RequestNumber { get; set; }
+
+        [SQLite.Column("CurrentNumber")]
+        public int CurrentNumber { get; set; }
+
+        [SQLite.Column("Status")] 
+        public string Status { get; set; }
 
     }
 }

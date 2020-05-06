@@ -14,11 +14,19 @@ namespace NEUVolunteer.Services.interfaces
 
         Task<IList<ActivityType>> GetActivityTypesAsync();
 
+        Task<string> GetActivityTypeNameAsync(int id);
+
         Task AddApplyAsync(int applyActivityId, int applyManagerId, string gatherTime, string gatherPlace, string startTime, string endTime, int number);
+
+        Task<Apply> GetApplyAsync(int id);
 
         Task AddActivityInfo(string activityName, string activityPlace, string activityBrief, int typeId);
 
         Task<IList<ActivityInfo>> GetActivityInfosAsync();
+
+        Task<ActivityInfo> GetActivityInfoAsync(int id);
+
+        Task<Manager> GetManagerAsync(int id);
     }
 
     public static class DBConstants
@@ -32,6 +40,6 @@ namespace NEUVolunteer.Services.interfaces
         /// <summary>
         /// 版本。
         /// </summary>
-        public const int Version = 3;
+        public const int Version = 5;
     }
 }

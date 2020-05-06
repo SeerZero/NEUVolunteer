@@ -50,12 +50,20 @@ namespace NEUVolunteer.Services.implements
         public async Task<IList<ActivityType>> GetActivityTypesAsync() =>
             await Connection.Table<ActivityType>().ToListAsync();
 
+        public async Task<string> GetActivityTypeNameAsync(int id) {
+            var type = await Connection.Table<ActivityType>().FirstOrDefaultAsync(p => p.TypeId.Equals(id));
+            return type.TypeName;
+        }
+
         public async Task AddApplyAsync(int applyActivityId, int applyManagerId, string gatherTime, string gatherPlace, string startTime, string endTime, int number) {
             var sql = "insert into Apply (ApplyActivityId,ApplyManagerId,GatherTime,GatherPlace,StartTime,EndTime,RequestNumber) values ("
                       + applyActivityId.ToString() + "," + applyManagerId.ToString() + ",'" + gatherTime + "','"
                       + gatherPlace + "','" + startTime + "','" + endTime + "'," + number + ")";
             await Connection.QueryAsync<Apply>(sql);
         }
+
+        public async Task<Apply> GetApplyAsync(int id) =>
+            await Connection.Table<Apply>().FirstOrDefaultAsync(p => p.ApplyId.Equals(id));
 
         public async Task AddActivityInfo(string activityName, string activityPlace, string activityBrief, int typeId) {
             var sql = "insert into ActivityInfo (ActivityName,ActivityPlace,ActivityBrief,ActivityTypeId) values ('"
@@ -65,6 +73,11 @@ namespace NEUVolunteer.Services.implements
 
         public async Task<IList<ActivityInfo>> GetActivityInfosAsync() =>
             await Connection.Table<ActivityInfo>().ToListAsync();
-    
+
+        public async Task<ActivityInfo> GetActivityInfoAsync(int id) =>
+            await Connection.Table<ActivityInfo>().FirstOrDefaultAsync(p => p.ActivityId.Equals(id));
+
+        public async Task<Manager> GetManagerAsync(int id) =>
+            await Connection.Table<Manager>().FirstOrDefaultAsync(p => p.ManagerId.Equals(id));
     }
 }
