@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using NEUVolunteer.Model;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.IO;

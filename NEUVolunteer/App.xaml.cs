@@ -11,7 +11,7 @@ namespace NEUVolunteer
         {
             InitializeComponent();
 
-            MainPage = new WelcomePage();
+            MainPage = new HomePage();
         }
 
         protected override void OnStart()

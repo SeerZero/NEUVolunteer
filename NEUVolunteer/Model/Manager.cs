@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NEUVolunteer
+namespace NEUVolunteer.Model
 {
     [SQLite.Table("Manager")]
     public class Manager

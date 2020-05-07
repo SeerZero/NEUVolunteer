@@ -12,13 +12,16 @@ namespace NEUVolunteer.ViewModel
     {
         public WelcomePageViewModel(INavigationService navigationService,
             ITodayImageService todayImageService,
-            IMottoService mottoService) : base(
+            IMottoService mottoService,
+            IDBService dBService) : base(
             navigationService)
         {
             _todayImageService = todayImageService;
             _imottoService = mottoService;
+            _dBService = dBService;
         }
-        private IMottoService _imottoService; 
+        private IMottoService _imottoService;
+        private IDBService _dBService;
         public bool FirstPageVisible
         {
             get => _firstPageVisible;
@@ -39,6 +42,10 @@ namespace NEUVolunteer.ViewModel
         {
             Task.Run(async () =>
             {
+                if (!_dBService.Initialized())
+                {
+                    await _dBService.InitializeAsync();
+                }
 
                 await Task.Run(() => Thread.Sleep(4000));
                 Device.BeginInvokeOnMainThread(async () =>

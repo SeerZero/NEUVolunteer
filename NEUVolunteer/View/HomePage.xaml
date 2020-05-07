@@ -40,7 +40,7 @@
         <Grid RowSpacing="0" ColumnSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="48"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -74,35 +74,34 @@
                 </Grid.ColumnDefinitions>
 
                 <Button Grid.Column="0" 
-                        x:Name="RecommendNavigationButton"
+                        x:Name="InformationNavigationButton"
                         Text="资讯" 
                         Style="{StaticResource NavigationButtonStyle}"
-                        Command="{Binding RecommendPageCommand}"
-                        IsEnabled="{Binding RecommendPageVisible,
+                        Command="{Binding InformationPageCommand}"
+                        IsEnabled="{Binding InformationPageVisible,
                                                           Converter={StaticResource NotConverter}}"/>
 
                 <Button Grid.Column="1" 
-                        x:Name="CollectionNavigationButton"
+                        x:Name="ActivityNavigationButton"
                         Text="活动" 
                         Style="{StaticResource NavigationButtonStyle}" 
-                        Command="{Binding CollectionPageCommand}"
-                        IsEnabled="{Binding CollectionPageVisible,
+                        Command="{Binding ActivityPageCommand}"
+                        IsEnabled="{Binding ActivityPageVisible,
                                                           Converter={StaticResource NotConverter}}"/>
 
                 <Button Grid.Column="2" 
-                        x:Name="VocabularyNavigationButton"
+                        x:Name="MyNavigationButton"
                         Text="我的" 
                         Style="{StaticResource NavigationButtonStyle}" 
-                        Command="{Binding VocabularyPageCommand}"
-
-                        IsEnabled="{Binding VocabularyPageVisible,
+                        Command="{Binding MyPageCommand}"
+                        IsEnabled="{Binding MyPageVisible,
                                                           Converter={StaticResource NotConverter}}"/>
 
             </Grid>
 
 
             <StackLayout x:Name="InformationPage" Grid.Row="1"  IsVisible="{Binding InformationPageVisible}">
-                <ListView ItemsSource="{Binding InformationItemCollection}" SelectionMode="None">
+                <ListView ItemsSource="{Binding NewsItemCollection}" SelectionMode="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -115,18 +114,27 @@
                                         <RowDefinition Height="1"/>
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Row="0" Grid.ColumnSpan="2">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
                                         <Label  Grid.Column="0"
                                                 TextColor="Black"
-                                                Text="{Binding Article.Title}"/>
+                                                Text="{Binding Newss.NewsTitle}"/>
                                     </Grid>
-                                    <BoxView Grid.Row="1"  Color="Gray" Opacity="0.3"></BoxView>
                                     <Label Grid.Row="2" 
+                                           Grid.Column="0"
                                            TextColor="Gray"
-                                            Text="{Binding Article.Snippet}"/>
+                                            Text="{Binding  Newss.NewsTime}"/>
+                                    <Label Grid.Row="2"
+                                           Grid.Column="1"
+                                           TextColor="Gray"
+                                           Text="{Binding Newss.NewsEditor}"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
@@ -134,13 +142,13 @@
                 </ListView>
             </StackLayout>
 
-            
-            
-            
-            
-            <StackLayout x:Name="CollectionPage" Grid.Row="2" IsVisible="{Binding CollectionPageVisible}">
+
+
+
+
+            <StackLayout x:Name="ActivityPage" Grid.Row="2" IsVisible="{Binding ActivityPageVisible}">
                 <Grid>
-                    <ListView ItemsSource="{Binding CollectionItemCollection}" SelectionMode="None">
+                    <ListView ItemsSource="{Binding ActivityItemCollection}" SelectionMode="None">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -156,38 +164,19 @@
                                         <Grid Grid.Row="0">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="Auto"/>
                                             </Grid.ColumnDefinitions>
                                             <Label  Grid.Column="0"
                                                 TextColor="Black"
-                                                Text="{Binding Article.Title}"/>
-
-                                            <Button Grid.Column="1"
-                                                Text="删除" 
-                                                BorderColor="white"
-                                                BackgroundColor="White"
-                                                TextColor="Gray"
-                                                Command="{Binding DeleteCommand}"/>
+                                                Text="{Binding Activitys.ActivityName}"/>
                                         </Grid>
-                                        <BoxView Grid.Row="1"  Color="Gray" Opacity="0.3"></BoxView>
                                         <Label Grid.Row="2" 
                                            TextColor="Gray"
-                                            Text="{Binding Article.Snippet}"/>
+                                            Text="{Binding  Activitys.ActivityPlace}"/>
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                    <Grid VerticalOptions="End" Margin="8">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="48"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="48"/>
-                        </Grid.ColumnDefinitions>
-                        <ImageButton Grid.Row="0" Grid.Column="1" Source="./addIcon.png" Command="{Binding AddCollcetionCommand}"/>
-                    </Grid>
                 </Grid>
             </StackLayout>
 

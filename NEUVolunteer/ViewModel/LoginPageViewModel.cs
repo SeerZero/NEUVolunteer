@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using NEUVolunteer.Model;
 using NEUVolunteer.Service;
 using Xamarin.Essentials;
 

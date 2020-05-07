@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NEUVolunteer.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace NEUVolunteer.Service
     }
     public static class IVolunteerConstants
     {
-        public const int Version = 1;
+        public const int Version = 5;
         public const string VersionKey = nameof(IVolunteerConstants) + "." + nameof(Version);
     }
 }
