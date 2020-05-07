@@ -20,6 +20,12 @@ namespace NEUVolunteer.Services.interfaces
 
         Task<Apply> GetApplyAsync(int id);
 
+        //设置一个Apply的状态为报名截止
+        Task StopApplyAsync(int id);
+
+        //设置一个Apply的状态为可以报名
+        Task RestoreApplyAsync(int id);
+
         Task AddActivityInfo(string activityName, string activityPlace, string activityBrief, int typeId);
 
         Task<IList<ActivityInfo>> GetActivityInfosAsync();

@@ -157,20 +157,27 @@
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
-            <Button Text="报名" TextColor="White"
-                    BackgroundColor="#2294f0"
-                    Margin="8" CornerRadius="8"
-                    VerticalOptions="EndAndExpand"
-                    FontSize="Body"
-                    Command="{Binding SignUpButtonCommand}"
-                    IsVisible="{Binding IsSignUp}"/>
-            <Button Text="取消报名" TextColor="White"
-                    BackgroundColor="#2294f0"
-                    Margin="8" CornerRadius="8"
-                    VerticalOptions="EndAndExpand"
-                    FontSize="Body"
-                    Command="{Binding CancelButtonCommand}"
-                    IsVisible="{Binding IsCancel}"/>
+            <StackLayout IsVisible="{Binding IsVolunteerCtrl}"
+                         VerticalOptions="EndAndExpand">
+                <Button Text="报名" TextColor="White"
+                        BackgroundColor="#2294f0"
+                        Margin="8" CornerRadius="8"
+                        FontSize="Body"
+                        HorizontalOptions="FillAndExpand"
+                        Command="{Binding SignUpButtonCommand}"
+                        IsVisible="{Binding IsSignUp}"/>
+                <Button Text="取消报名" TextColor="White"
+                        BackgroundColor="#2294f0"
+                        Margin="8" CornerRadius="8"
+                        FontSize="Body"
+                        HorizontalOptions="FillAndExpand"
+                        Command="{Binding CancelButtonCommand}"
+                        IsVisible="{Binding IsCancel}"/>
+                <Label Text="报名已截止，若需取消报名请与负责人联系"
+                       FontSize="Body" Margin="8"
+                       HorizontalOptions="CenterAndExpand"
+                       IsVisible="{Binding IsTip}"/>
+            </StackLayout>
 
             <Grid IsVisible="{Binding IsManagerCtrl}" 
                   VerticalOptions="EndAndExpand">
@@ -189,10 +196,18 @@
                         Command="{Binding UpdateButtonCommand}"/>
                 <Button Grid.Row="0" Grid.Column="1"
                         Text="结束报名" TextColor="White"
+                        BackgroundColor="OrangeRed"
+                        Margin="8" CornerRadius="8"
+                        FontSize="Body"
+                        Command="{Binding StopButtonCommand}"
+                        IsVisible="{Binding IsStop}"/>
+                <Button Grid.Row="0" Grid.Column="1"
+                        Text="恢复报名" TextColor="White"
                         BackgroundColor="#2294f0"
                         Margin="8" CornerRadius="8"
                         FontSize="Body"
-                        Command="{Binding StopButtonCommand}"/>
+                        Command="{Binding RestoreButtonCommand}"
+                        IsVisible="{Binding IsRestore}"/>
             </Grid>
 
         </StackLayout>

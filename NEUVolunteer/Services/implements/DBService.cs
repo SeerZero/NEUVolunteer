@@ -66,6 +66,25 @@ namespace NEUVolunteer.Services.implements
         public async Task<Apply> GetApplyAsync(int id) =>
             await Connection.Table<Apply>().FirstOrDefaultAsync(p => p.ApplyId.Equals(id));
 
+        public async Task StopApplyAsync(int id) {
+            var status_sql = "update Apply set Status = '报名截止' where ApplyId = " + id;
+            await Connection.QueryAsync<Apply>(status_sql);
+        }
+
+        public async Task RestoreApplyAsync(int id) {
+            var apply = await Connection.Table<Apply>().FirstOrDefaultAsync(p => p.ApplyId.Equals(id));
+            if (apply.CurrentNumber < apply.RequestNumber) {
+                var status_sql = "update Apply set Status = '报名中' where ApplyId = " + id;
+                await Connection.QueryAsync<Apply>(status_sql);
+            }
+            else {
+                var status_sql = "update Apply set Status = '报名已满' where ApplyId = " + id;
+                await Connection.QueryAsync<Apply>(status_sql);
+            }
+
+
+        }
+
         public async Task AddActivityInfo(string activityName, string activityPlace, string activityBrief, int typeId) {
             var sql = "insert into ActivityInfo (ActivityName,ActivityPlace,ActivityBrief,ActivityTypeId) values ('"
                       + activityName + "','" + activityPlace + "','" + activityBrief + "'," + typeId.ToString() + ")";
