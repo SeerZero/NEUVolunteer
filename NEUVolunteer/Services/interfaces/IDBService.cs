@@ -26,6 +26,8 @@ namespace NEUVolunteer.Services.interfaces
         //设置一个Apply的状态为可以报名
         Task RestoreApplyAsync(int id);
 
+        Task UpdateApplyAsync(Apply apply);
+
         Task AddActivityInfo(string activityName, string activityPlace, string activityBrief, int typeId);
 
         Task<IList<ActivityInfo>> GetActivityInfosAsync();

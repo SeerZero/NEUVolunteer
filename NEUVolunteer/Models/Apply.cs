@@ -19,6 +19,9 @@ namespace NEUVolunteer.Models
         [SQLite.Column("GatherTime")]
         public string GatherTime { get; set; }
 
+        [SQLite.Column("GatherPlace")]
+        public string GatherPlace { get; set; }
+
         [SQLite.Column("StartTime")]
         public string StartTime { get; set; }
 

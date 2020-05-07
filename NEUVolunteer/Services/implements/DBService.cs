@@ -85,6 +85,13 @@ namespace NEUVolunteer.Services.implements
 
         }
 
+        public async Task UpdateApplyAsync(Apply apply) {
+            var sql = "update Apply set GatherTime = '" + apply.GatherTime + "', StartTime = '" + apply.StartTime 
+                      + "', EndTime = '" + apply.EndTime + "', RequestNumber = " + apply.RequestNumber + " Where ApplyId = " 
+                      + apply.ApplyId;
+            await Connection.QueryAsync<Apply>(sql);
+        }
+
         public async Task AddActivityInfo(string activityName, string activityPlace, string activityBrief, int typeId) {
             var sql = "insert into ActivityInfo (ActivityName,ActivityPlace,ActivityBrief,ActivityTypeId) values ('"
                       + activityName + "','" + activityPlace + "','" + activityBrief + "'," + typeId.ToString() + ")";

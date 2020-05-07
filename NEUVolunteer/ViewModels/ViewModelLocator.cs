@@ -15,6 +15,7 @@ namespace NEUVolunteer.ViewModels
             SimpleIoc.Default.Register<IPreferenceStorage, PreferenceStorage>();
             SimpleIoc.Default.Register<CreateApplyPageViewModel>();
             SimpleIoc.Default.Register<ActivityDetailPageViewModel>();
+            SimpleIoc.Default.Register<UpdateApplyPageViewModel>();
         }
 
         public CreateActivityPageViewModel CreateActivityPageViewModel =>
@@ -25,5 +26,8 @@ namespace NEUVolunteer.ViewModels
 
         public ActivityDetailPageViewModel ActivityDetailPageViewModel =>
             SimpleIoc.Default.GetInstance<ActivityDetailPageViewModel>();
+
+        public UpdateApplyPageViewModel UpdateApplyPageViewModel =>
+            SimpleIoc.Default.GetInstance<UpdateApplyPageViewModel>();
     }
 }
