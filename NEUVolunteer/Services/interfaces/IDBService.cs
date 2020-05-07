@@ -30,6 +30,8 @@ namespace NEUVolunteer.Services.interfaces
 
         Task<Volunteer> GetVolunteerAsync(int id);
 
+        Task<bool> CanVolunteerInApply(int applyId);
+
         Task AddVolunteerInApply(int applyId, int volunteerId);
 
         Task DeleteVolunteerInApply(int applyId, int volunteerId);
@@ -48,6 +50,6 @@ namespace NEUVolunteer.Services.interfaces
         /// <summary>
         /// 版本。
         /// </summary>
-        public const int Version = 5;
+        public const int Version = 6;
     }
 }

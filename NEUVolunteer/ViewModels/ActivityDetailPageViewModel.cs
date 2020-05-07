@@ -52,14 +52,21 @@ namespace NEUVolunteer.ViewModels
                 await _dbService.InitializeAsync();
             }
 
-            var volunteer = await _dbService.GetVolunteerAsync(1);
-            User.UserId = volunteer.VolunteerId;
-            User.IsManager = false;
+            //var volunteer = await _dbService.GetVolunteerAsync(1);
+            //User.UserId = volunteer.VolunteerId;
+            //User.IsManager = false;
+            var manager = await _dbService.GetManagerAsync(1);
+            User.UserId = manager.ManagerId;
+            User.IsManager = true;
             Apply = await _dbService.GetApplyAsync(1);
             ActivityInfo = await _dbService.GetActivityInfoAsync(Apply.ApplyActivityId);
             Manager = await _dbService.GetManagerAsync(Apply.ApplyManagerId);
             TypeName = await _dbService.GetActivityTypeNameAsync(ActivityInfo.ActivityTypeId);
 
+            await SetButtonFunction();
+        }
+
+        internal async Task SetButtonFunction() {
             //判断是否为管理员浏览，控制按钮功能
             if (User.IsManager) {
                 IsManagerCtrl = true;
@@ -68,13 +75,15 @@ namespace NEUVolunteer.ViewModels
             }
             else {
                 IsManagerCtrl = false;
+                //判断用户是否报名了活动
                 if (await _dbService.IsVolunteerInApply(Apply.ApplyId, User.UserId)) {
                     IsSignUp = false;
                     IsCancel = true;
                 }
                 else {
-                    IsSignUp = true;
                     IsCancel = false;
+                    //判断该活动是否还能报名
+                    IsSignUp = Apply.Status.Equals("报名中");
                 }
             }
         }
@@ -116,8 +125,8 @@ namespace NEUVolunteer.ViewModels
 
         internal async Task SignUpButtonCommandFunction() {
             await _dbService.AddVolunteerInApply(Apply.ApplyId, User.UserId);
-            IsSignUp = false;
-            IsCancel = true;
+            Apply = await _dbService.GetApplyAsync(Apply.ApplyId);
+            await SetButtonFunction();
         }
 
         private RelayCommand _cancelButtonCommand;
@@ -128,8 +137,8 @@ namespace NEUVolunteer.ViewModels
         internal async Task CancelButtonCommandFunction()
         {
             await _dbService.DeleteVolunteerInApply(Apply.ApplyId, User.UserId);
-            IsSignUp = true;
-            IsCancel = false;
+            Apply = await _dbService.GetApplyAsync(Apply.ApplyId);
+            await SetButtonFunction();
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using NEUVolunteer.Models;
@@ -83,14 +84,37 @@ namespace NEUVolunteer.Services.implements
         public async Task<Volunteer> GetVolunteerAsync(int id) =>
             await Connection.Table<Volunteer>().FirstOrDefaultAsync(p => p.VolunteerId.Equals(id));
 
+        public async Task<bool> CanVolunteerInApply(int applyId) {
+            var apply = await Connection.Table<Apply>().FirstOrDefaultAsync(p => p.ApplyId.Equals(applyId));
+            return (apply.CurrentNumber < apply.RequestNumber);
+        }
+
         public async Task AddVolunteerInApply(int applyId, int volunteerId) {
-            var sql = "insert into VolunteerInApply values (" + applyId + "," + volunteerId + ")";
-            await Connection.QueryAsync<VolunteerInApply>(sql);
+            var apply = await Connection.Table<Apply>().FirstOrDefaultAsync(p => p.ApplyId.Equals(applyId));
+            if (apply.CurrentNumber < apply.RequestNumber) {
+                var insert_sql = "insert into VolunteerInApply values (" + applyId + "," + volunteerId + ")";
+                await Connection.QueryAsync<VolunteerInApply>(insert_sql);
+
+                var update_sql = "update Apply set CurrentNumber = CurrentNumber + 1 where ApplyId = " + applyId;
+                await Connection.QueryAsync<Apply>(update_sql);
+
+                if (apply.CurrentNumber + 1 == apply.RequestNumber) {
+                    var status_sql = "update Apply set Status = '报名已满' where ApplyId = " + applyId;
+                    await Connection.QueryAsync<Apply>(status_sql);
+                }
+            }
         }
 
         public async Task DeleteVolunteerInApply(int applyId, int volunteerId) {
+            var apply = await Connection.Table<Apply>().FirstOrDefaultAsync(p => p.ApplyId.Equals(applyId));
             var sql = "delete from VolunteerInApply where ApplyId=" + applyId + " and VolunteerId=" + volunteerId;
             await Connection.QueryAsync<VolunteerInApply>(sql);
+            var update_sql = "update Apply set CurrentNumber = CurrentNumber - 1 where ApplyId = " + applyId;
+            await Connection.QueryAsync<Apply>(update_sql);
+            if (apply.CurrentNumber == apply.RequestNumber) {
+                var status_sql = "update Apply set Status = '报名中' where ApplyId = " + applyId;
+                await Connection.QueryAsync<Apply>(status_sql);
+            }
         }
 
         public async Task<bool> IsVolunteerInApply(int applyId, int volunteerId) {
