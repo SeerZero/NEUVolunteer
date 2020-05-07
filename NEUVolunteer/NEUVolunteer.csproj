@@ -11,18 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="img.png" />
-    <None Remove="login2.png" />
     <None Remove="NEUVolunteer.db" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="img.png" >
-      <LogicalName>img.png</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="login2.png" >
-      <LogicalName>login2.png</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Include="NEUVolunteer.db">
       <LogicalName>NEUVolunteer.db</LogicalName>
     </EmbeddedResource>
