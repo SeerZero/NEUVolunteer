@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:b="clr-namespace:Behaviors;assembly=Behaviors"
+             xmlns:lc="clr-namespace:NEUVolunteer.Model.BindingConverters;assembly=NEUVolunteer" 
+             mc:Ignorable="d"
+             x:Class="NEUVolunteer.View.HomePage"
+             BindingContext="{Binding HomePageViewModel,Source={StaticResource ViewModelLocator}}">
+    <ContentPage.Behaviors>
+        <b:EventHandlerBehavior EventName="Appearing">
+            <b:ActionCollection>
+                <b:InvokeCommandAction Command="{Binding AppearCommand}"/>
+            </b:ActionCollection>
+        </b:EventHandlerBehavior>
+    </ContentPage.Behaviors>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="NavigationButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource MainGreen}"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Opacity" Value="0.6"/>
+            </Style>
+
+            <Style x:Key="SearchBarStyle" TargetType="SearchBar">
+                <Setter Property="Opacity" Value="0.3"/>
+                <Setter Property="Placeholder" Value="Search"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+
+            <lc:NotConverter x:Key="NotConverter"/>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Row="0" 
+              BackgroundColor="{StaticResource MainGreen}"
+              Padding="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+
+            <Grid Grid.Row="0" 
+                  BackgroundColor="{StaticResource MainGreen}"
+                  ColumnSpacing="0"
+                  RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" 
+                        x:Name="RecommendNavigationButton"
+                        Text="资讯" 
+                        Style="{StaticResource NavigationButtonStyle}"
+                        Command="{Binding RecommendPageCommand}"
+                        IsEnabled="{Binding RecommendPageVisible,
+                                                          Converter={StaticResource NotConverter}}"/>
+
+                <Button Grid.Column="1" 
+                        x:Name="CollectionNavigationButton"
+                        Text="活动" 
+                        Style="{StaticResource NavigationButtonStyle}" 
+                        Command="{Binding CollectionPageCommand}"
+                        IsEnabled="{Binding CollectionPageVisible,
+                                                          Converter={StaticResource NotConverter}}"/>
+
+                <Button Grid.Column="2" 
+                        x:Name="VocabularyNavigationButton"
+                        Text="我的" 
+                        Style="{StaticResource NavigationButtonStyle}" 
+                        Command="{Binding VocabularyPageCommand}"
+
+                        IsEnabled="{Binding VocabularyPageVisible,
+                                                          Converter={StaticResource NotConverter}}"/>
+
+            </Grid>
+
+
+            <StackLayout x:Name="RecommendPage" Grid.Row="1"  IsVisible="{Binding RecommendPageVisible}">
+                <ListView ItemsSource="{Binding RecommendItemCollection}" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="16">
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectCommand}"/>
+                                    </Grid.GestureRecognizers>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="1"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label  Grid.Column="0"
+                                                TextColor="Black"
+                                                Text="{Binding Article.Title}"/>
+
+                                        <Button Grid.Column="1"
+                                                Text="收藏" 
+                                                IsVisible="{Binding HasCollected,Converter={StaticResource NotConverter}}"
+                                                BorderColor="white"
+                                                BackgroundColor="White"
+                                                TextColor="Gray"
+                                                Command="{Binding AddToCollectionCommand}"/>
+                                    </Grid>
+                                    <BoxView Grid.Row="1"  Color="Gray" Opacity="0.3"></BoxView>
+                                    <Label Grid.Row="2" 
+                                           TextColor="Gray"
+                                            Text="{Binding Article.Snippet}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <StackLayout x:Name="CollectionPage" Grid.Row="2" IsVisible="{Binding CollectionPageVisible}">
+                <Grid>
+                    <ListView ItemsSource="{Binding CollectionItemCollection}" SelectionMode="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Padding="16">
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding SelectCommand}"/>
+                                        </Grid.GestureRecognizers>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label  Grid.Column="0"
+                                                TextColor="Black"
+                                                Text="{Binding Article.Title}"/>
+
+                                            <Button Grid.Column="1"
+                                                Text="删除" 
+                                                BorderColor="white"
+                                                BackgroundColor="White"
+                                                TextColor="Gray"
+                                                Command="{Binding DeleteCommand}"/>
+                                        </Grid>
+                                        <BoxView Grid.Row="1"  Color="Gray" Opacity="0.3"></BoxView>
+                                        <Label Grid.Row="2" 
+                                           TextColor="Gray"
+                                            Text="{Binding Article.Snippet}"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Grid VerticalOptions="End" Margin="8">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="48"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="48"/>
+                        </Grid.ColumnDefinitions>
+                        <ImageButton Grid.Row="0" Grid.Column="1" Source="./addIcon.png" Command="{Binding AddCollcetionCommand}"/>
+                    </Grid>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout x:Name="VocabularyPage" Grid.Row="2" IsVisible="{Binding VocabularyPageVisible}">
+                <ListView ItemsSource="{Binding NewWordsCollection}" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="16">
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding VisibleToggleCommand}"/>
+                                    </Grid.GestureRecognizers>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label  Grid.Column="0"
+                                                TextColor="Black"
+                                                Text="{Binding Spell}"/>
+
+                                        <Button Grid.Column="1"
+                                                Text="加入熟词" 
+                                                BorderColor="white"
+                                                BackgroundColor="White"
+                                                TextColor="Gray"
+                                                Command="{Binding ToOldWordCommand}"/>
+                                    </Grid>
+                                    <StackLayout Grid.Row="1" IsVisible="{Binding ExplanationVisible}">
+                                        <Label Text="{Binding UsPhonetic}"/>
+                                        <Label Text="{Binding Explanation}"/>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

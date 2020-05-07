@@ -7,5 +7,6 @@
              x:Class="NEUVolunteer.App">
     <Application.Resources>
         <vm:ViewModelLocator x:Key="ViewModelLocator"/>
+        <Color x:Key="MainGreen">#45b97c</Color>
     </Application.Resources>
 </Application>

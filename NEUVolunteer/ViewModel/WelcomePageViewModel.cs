@@ -53,22 +53,21 @@ namespace NEUVolunteer.ViewModel
                     SecondPageVisible = true;
                 });
                 await Task.Run(() => Thread.Sleep(4000));
-          //      string pageKey;
-                if (Preferences.Get("FirstLogin", true))
-               // if(true)
+                string pageKey;
+               // if (Preferences.Get("FirstLogin", true))
+                if(true)
                 {
                     Preferences.Set("FirstLogin", false);
-               //     Preferences.Set(WordDatabaseConstants.Key,"0");
-               //    pageKey = NavigationServiceConstants
-                //       .VocabularyTestConfirmPage;
+                    pageKey = NavigationServiceConstants
+                       .LoginPage;
                 }
                 else
                 {
           //          Word.wordNumber = int.Parse(Preferences.Get(WordDatabaseConstants.Key, ""));
            //         pageKey = NavigationServiceConstants.HomePage;
                 }
-           ///     Device.BeginInvokeOnMainThread(() =>
-            //        _navigationService.NavigationTo(pageKey, false));
+                Device.BeginInvokeOnMainThread(() =>
+                    _navigationService.NavigationTo(pageKey, false));
 
             });
         }));

@@ -26,3 +26,5 @@ D:\vs2019\Volunteer\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.pdb
 D:\vs2019\Volunteer\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.csproj.CoreCompileInputs.cache
 D:\vs2019\Volunteer\NEUVolunteer\obj\Debug\netstandard2.0\View\WelcomePage.xaml.g.cs
 D:\vs2019\Volunteer\NEUVolunteer\obj\Debug\netstandard2.0\XamlC.stamp
+D:\vs2019\Volunteer\NEUVolunteer\obj\Debug\netstandard2.0\View\HomePage.xaml.g.cs
+D:\vs2019\Volunteer\NEUVolunteer\obj\Debug\netstandard2.0\View\LoginPage.xaml.g.cs

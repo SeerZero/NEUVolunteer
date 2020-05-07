@@ -28,15 +28,14 @@ namespace NEUVolunteer.Service
     {
 
         public static readonly string WelcomePage = nameof(WelcomePage);
-        public static readonly string ArticleAddPage = nameof(ArticleAddPage);
-        public static readonly string ArticleReadPage = nameof(ArticleReadPage);
-
+        public static readonly string LoginPage = nameof(LoginPage);
         public static readonly string HomePage = nameof(HomePage);
 
 
         public static readonly Dictionary<string, Type> PageKeyTypeDictionary =
             new Dictionary<string, Type> {
-                {WelcomePage, typeof(WelcomePage)}
+                {WelcomePage, typeof(WelcomePage)},
+                {LoginPage,typeof(LoginPage) }
             };
     }
 }

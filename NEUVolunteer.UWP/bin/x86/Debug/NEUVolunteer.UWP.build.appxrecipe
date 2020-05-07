@@ -706,6 +706,12 @@
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\img.png">
+      <PackagePath>img.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\login2.png">
+      <PackagePath>login2.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
