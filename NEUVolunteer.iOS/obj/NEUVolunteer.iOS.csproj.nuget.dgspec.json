@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj": {}
+    "D:\\vs2019\\Volunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj": {
+    "D:\\vs2019\\Volunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj",
+        "projectUniqueName": "D:\\vs2019\\Volunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj",
         "projectName": "NEUVolunteer.iOS",
-        "projectPath": "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj",
+        "projectPath": "D:\\vs2019\\Volunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj",
         "packagesPath": "C:\\Users\\wwei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer.iOS\\obj\\",
+        "outputPath": "D:\\vs2019\\Volunteer\\NEUVolunteer.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj": {
-                "projectPath": "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj"
+              "D:\\vs2019\\Volunteer\\NEUVolunteer\\NEUVolunteer.csproj": {
+                "projectPath": "D:\\vs2019\\Volunteer\\NEUVolunteer\\NEUVolunteer.csproj"
               }
             }
           }
@@ -42,6 +42,14 @@
       "frameworks": {
         "xamarinios10": {
           "dependencies": {
+            "Behaviors.Forms": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.3.1, )"
@@ -65,14 +73,14 @@
         }
       }
     },
-    "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj": {
+    "D:\\vs2019\\Volunteer\\NEUVolunteer\\NEUVolunteer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj",
+        "projectUniqueName": "D:\\vs2019\\Volunteer\\NEUVolunteer\\NEUVolunteer.csproj",
         "projectName": "NEUVolunteer",
-        "projectPath": "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj",
+        "projectPath": "D:\\vs2019\\Volunteer\\NEUVolunteer\\NEUVolunteer.csproj",
         "packagesPath": "C:\\Users\\wwei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wwei\\source\\NEUVolunteer\\NEUVolunteer\\obj\\",
+        "outputPath": "D:\\vs2019\\Volunteer\\NEUVolunteer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -104,11 +112,31 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Behaviors.Forms": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.14.1, )"
+            },
+            "MvvmLightLibs": {
+              "target": "Package",
+              "version": "[5.4.1.1, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Refractored.MvvmHelpers": {
+              "target": "Package",
+              "version": "[1.6.1-beta, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -117,6 +145,14 @@
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[4.4.0.991265, )"
+            },
+            "Xamarin.Forms.Extended.InfiniteScrolling": {
+              "target": "Package",
+              "version": "[1.0.0-preview2, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.7.302-beta, )"
             }
           },
           "imports": [
@@ -129,7 +165,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

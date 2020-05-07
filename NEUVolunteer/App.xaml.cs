@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NEUVolunteer.View;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace NEUVolunteer
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new WelcomePage();
         }
 
         protected override void OnStart()

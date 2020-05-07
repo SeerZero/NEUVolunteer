@@ -10,23 +10,50 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>ec0cc741-fd3e-485c-81be-68815c480690</PackageIdentityName>
     <PackageIdentityPublisher>CN=464abb99-8734-4ca8-ac0d-d50adf0a85f2</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>D:\vs2019\Volunteer\NEUVolunteer.UWP\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\NEUVolunteer.UWP.exe">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\NEUVolunteer.UWP.exe">
       <PackagePath>entrypoint\NEUVolunteer.UWP.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\behaviors.forms\1.4.0\lib\netstandard1.0\Behaviors.dll">
+      <PackagePath>Behaviors.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\castle.core\4.4.0\lib\netstandard1.5\Castle.Core.dll">
+      <PackagePath>Castle.Core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\commonservicelocator\2.0.2\lib\netstandard2.0\CommonServiceLocator.dll">
+      <PackagePath>CommonServiceLocator.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\moq\4.14.1\lib\netstandard2.0\Moq.dll">
+      <PackagePath>Moq.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\uap10.0\GalaSoft.MvvmLight.Extras.dll">
+      <PackagePath>GalaSoft.MvvmLight.Extras.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\uap10.0\GalaSoft.MvvmLight.Platform.dll">
+      <PackagePath>GalaSoft.MvvmLight.Platform.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\uap10.0\GalaSoft.MvvmLight.dll">
+      <PackagePath>GalaSoft.MvvmLight.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\newtonsoft.json\12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\refractored.mvvmhelpers\1.6.1-beta\lib\netstandard2.0\MvvmHelpers.dll">
+      <PackagePath>MvvmHelpers.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.9\runtimes\win10-x86\nativeassets\uap10.0.15138\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
@@ -442,9 +469,6 @@
     <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.9\runtimes\win10-x86\lib\uap10.0.15138\System.Threading.Tasks.Dataflow.dll">
       <PackagePath>System.Threading.Tasks.Dataflow.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.9\runtimes\win10-x86\lib\uap10.0.15138\System.Threading.Tasks.Extensions.dll">
-      <PackagePath>System.Threading.Tasks.Extensions.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.9\runtimes\win10-x86\lib\uap10.0.15138\System.Threading.Tasks.Parallel.dll">
       <PackagePath>System.Threading.Tasks.Parallel.dll</PackagePath>
     </AppxPackagedFile>
@@ -520,6 +544,30 @@
     <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.9\runtimes\win10-x86\lib\uap10.0.15138\netstandard.dll">
       <PackagePath>netstandard.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\sqlite-net-pcl\1.7.302-beta\lib\netstandard2.0\SQLite-net.dll">
+      <PackagePath>SQLite-net.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\sqlitepclraw.bundle_green\2.0.1\lib\netstandard2.0\SQLitePCLRaw.batteries_v2.dll">
+      <PackagePath>SQLitePCLRaw.batteries_v2.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\sqlitepclraw.core\2.0.1\lib\netstandard2.0\SQLitePCLRaw.core.dll">
+      <PackagePath>SQLitePCLRaw.core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\sqlitepclraw.lib.e_sqlite3\2.0.1\runtimes\win10-x86\nativeassets\uap10.0\e_sqlite3.dll">
+      <PackagePath>e_sqlite3.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\sqlitepclraw.provider.e_sqlite3\2.0.1\lib\uap10.0\SQLitePCLRaw.provider.e_sqlite3.dll">
+      <PackagePath>SQLitePCLRaw.provider.e_sqlite3.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\system.memory\4.5.3\lib\netstandard2.0\System.Memory.dll">
+      <PackagePath>System.Memory.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\system.runtime.compilerservices.unsafe\4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
+      <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\system.threading.tasks.extensions\4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll">
+      <PackagePath>System.Threading.Tasks.Extensions.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
     </AppxPackagedFile>
@@ -538,7 +586,10 @@
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\xamarin.forms\4.4.0.991265\lib\uap10.0\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\bin\Debug\netstandard2.0\NEUVolunteer.dll">
+    <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\xamarin.forms.extended.infinitescrolling\1.0.0-preview2\lib\netstandard1.0\Xamarin.Forms.Extended.InfiniteScrolling.dll">
+      <PackagePath>Xamarin.Forms.Extended.InfiniteScrolling.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer\bin\Debug\netstandard2.0\NEUVolunteer.dll">
       <PackagePath>NEUVolunteer.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
@@ -547,127 +598,127 @@
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\xamarin.forms\4.4.0.991265\lib\uap10.0\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\LargeTile.scale-100.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\LargeTile.scale-200.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\LargeTile.scale-400.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\SmallTile.scale-100.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\SmallTile.scale-200.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\SmallTile.scale-400.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\SplashScreen.scale-400.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Square150x150Logo.scale-100.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Square150x150Logo.scale-400.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.scale-100.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.scale-400.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.targetsize-16.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.targetsize-256.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.targetsize-48.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\StoreLogo.scale-200.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\StoreLogo.scale-400.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Wide310x150Logo.scale-100.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Assets\Wide310x150Logo.scale-400.png">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\NEUVolunteer.UWP.xr.xml">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\NEUVolunteer.UWP.xr.xml">
       <PackagePath>NEUVolunteer.UWP.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
       <PackagePath>Microsoft.UI.Xaml\DensityStyles\Compact.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.16299.0\\redist\Debug\x86\ucrtbased.dll">
@@ -679,10 +730,10 @@
     <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\microsoft.ui.xaml\2.1.190606001\build\..\lib\uap10.0\Microsoft.UI.Xaml.winmd">
       <PackagePath>WinMetadata\Microsoft.UI.Xaml.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\Core\NEUVolunteer.UWP.exe">
+    <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\Core\NEUVolunteer.UWP.exe">
       <PackagePath>NEUVolunteer.UWP.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

@@ -1,1 +1,1 @@
-C:\Users\wwei\source\NEUVolunteer\NEUVolunteer.UWP\NEUVolunteer.UWP.csproj;x86
+D:\vs2019\Volunteer\NEUVolunteer.UWP\NEUVolunteer.UWP.csproj;x86
