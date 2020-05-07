@@ -685,11 +685,11 @@
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dell\source\repos\test1\NEUVolunteer.UWP\Assets\img.png">
-      <PackagePath>Assets\img.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\dell\source\repos\test1\NEUVolunteer.UWP\img.png">
+      <PackagePath>img.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dell\source\repos\test1\NEUVolunteer.UWP\Assets\login2.png">
-      <PackagePath>Assets\login2.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\dell\source\repos\test1\NEUVolunteer.UWP\login2.png">
+      <PackagePath>login2.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dell\source\repos\test1\NEUVolunteer.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
