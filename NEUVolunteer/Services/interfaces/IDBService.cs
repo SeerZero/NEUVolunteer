@@ -43,6 +43,10 @@ namespace NEUVolunteer.Services.interfaces
         Task DeleteVolunteerInApply(int applyId, int volunteerId);
 
         Task<bool> IsVolunteerInApply(int applyId, int volunteerId);
+
+        Task<News> GetNewsAsync(int id);
+
+        Task<IList<News>> GetAllNewsAsync();
     }
 
     public static class DBConstants
@@ -56,6 +60,6 @@ namespace NEUVolunteer.Services.interfaces
         /// <summary>
         /// 版本。
         /// </summary>
-        public const int Version = 6;
+        public const int Version = 7;
     }
 }

@@ -141,5 +141,11 @@ namespace NEUVolunteer.Services.implements
                 .Where(p => p.VolunteerId.Equals(volunteerId) && p.ApplyId.Equals(applyId)).ToListAsync();
             return (result.Count != 0);
         }
+
+        public async Task<News> GetNewsAsync(int id) =>
+            await Connection.Table<News>().FirstOrDefaultAsync(p => p.NewsId.Equals(id));
+
+        public async Task<IList<News>> GetAllNewsAsync() =>
+            await Connection.Table<News>().ToListAsync();
     }
 }
