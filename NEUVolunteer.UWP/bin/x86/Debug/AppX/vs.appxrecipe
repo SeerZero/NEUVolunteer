@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-05-07T06:27:11.484</Modified>
+      <Modified>2020-05-07T08:13:31.622</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\NEUVolunteer.UWP.exe">
       <PackagePath>entrypoint\NEUVolunteer.UWP.exe</PackagePath>
-      <Modified>2020-05-07T06:27:08.201</Modified>
+      <Modified>2020-05-07T08:13:29.416</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\behaviors.forms\1.4.0\lib\netstandard1.0\Behaviors.dll">
       <PackagePath>Behaviors.dll</PackagePath>
@@ -764,7 +764,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer\bin\Debug\netstandard2.0\NEUVolunteer.dll">
       <PackagePath>NEUVolunteer.dll</PackagePath>
-      <Modified>2020-05-07T06:28:25.233</Modified>
+      <Modified>2020-05-07T08:13:20.509</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -919,15 +919,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
       <PackagePath>Microsoft.UI.Xaml\DensityStyles\Compact.xbf</PackagePath>
-      <Modified>2020-05-07T06:27:07.987</Modified>
+      <Modified>2020-05-07T08:13:29.127</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-05-07T06:27:07.987</Modified>
+      <Modified>2020-05-07T08:13:29.127</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-05-07T06:27:07.987</Modified>
+      <Modified>2020-05-07T08:13:29.127</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.16299.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -947,7 +947,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\Core\NEUVolunteer.UWP.exe">
       <PackagePath>NEUVolunteer.UWP.exe</PackagePath>
-      <Modified>2020-05-07T06:27:11.476</Modified>
+      <Modified>2020-05-07T08:13:31.594</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

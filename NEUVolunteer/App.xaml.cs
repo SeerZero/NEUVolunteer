@@ -12,7 +12,7 @@ namespace NEUVolunteer
         {
             InitializeComponent();
 
-            MainPage = new CreateApplyPage();
+            MainPage = new ActivityDetailPage();
         }
 
         protected override void OnStart()

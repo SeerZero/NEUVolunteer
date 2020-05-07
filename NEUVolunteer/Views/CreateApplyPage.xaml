@@ -37,7 +37,7 @@
 
                     <Label Grid.Row="0" Grid.Column="0" 
                            Grid.ColumnSpan="2"
-                           Text="活动信息"
+                           Text="活动开展申请"
                            TextColor="Black"
                            FontSize="Title"/>
 
@@ -120,7 +120,7 @@
                            Text="{Binding RequestNumber}"/>
                 </Grid>
             </ScrollView>
-            <Button Text="确认申报"
+            <Button Text="确认申请"
                     Margin="8"
                     CornerRadius="8"
                     VerticalOptions="EndAndExpand"

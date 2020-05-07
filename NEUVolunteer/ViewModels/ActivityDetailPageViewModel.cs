@@ -52,12 +52,12 @@ namespace NEUVolunteer.ViewModels
                 await _dbService.InitializeAsync();
             }
 
-            var volunteer = await _dbService.GetVolunteerAsync(1);
-            User.UserId = volunteer.VolunteerId;
-            User.IsManager = false;
-            //var manager = await _dbService.GetManagerAsync(1);
-            //User.UserId = manager.ManagerId;
-            //User.IsManager = true;
+            //var volunteer = await _dbService.GetVolunteerAsync(1);
+            //User.UserId = volunteer.VolunteerId;
+            //User.IsManager = false;
+            var manager = await _dbService.GetManagerAsync(1);
+            User.UserId = manager.ManagerId;
+            User.IsManager = true;
             Apply = await _dbService.GetApplyAsync(1);
             ActivityInfo = await _dbService.GetActivityInfoAsync(Apply.ApplyActivityId);
             Manager = await _dbService.GetManagerAsync(Apply.ApplyManagerId);
