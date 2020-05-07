@@ -101,8 +101,8 @@
             </Grid>
 
 
-            <StackLayout x:Name="RecommendPage" Grid.Row="1"  IsVisible="{Binding RecommendPageVisible}">
-                <ListView ItemsSource="{Binding RecommendItemCollection}" SelectionMode="None">
+            <StackLayout x:Name="InformationPage" Grid.Row="1"  IsVisible="{Binding InformationPageVisible}">
+                <ListView ItemsSource="{Binding InformationItemCollection}" SelectionMode="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -117,20 +117,11 @@
                                     </Grid.RowDefinitions>
                                     <Grid Grid.Row="0">
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
                                         <Label  Grid.Column="0"
                                                 TextColor="Black"
                                                 Text="{Binding Article.Title}"/>
-
-                                        <Button Grid.Column="1"
-                                                Text="收藏" 
-                                                IsVisible="{Binding HasCollected,Converter={StaticResource NotConverter}}"
-                                                BorderColor="white"
-                                                BackgroundColor="White"
-                                                TextColor="Gray"
-                                                Command="{Binding AddToCollectionCommand}"/>
                                     </Grid>
                                     <BoxView Grid.Row="1"  Color="Gray" Opacity="0.3"></BoxView>
                                     <Label Grid.Row="2" 
@@ -143,6 +134,10 @@
                 </ListView>
             </StackLayout>
 
+            
+            
+            
+            
             <StackLayout x:Name="CollectionPage" Grid.Row="2" IsVisible="{Binding CollectionPageVisible}">
                 <Grid>
                     <ListView ItemsSource="{Binding CollectionItemCollection}" SelectionMode="None">

@@ -37,7 +37,7 @@ namespace NEUVolunteer.ViewModel
         {
             get => _collectionPageVisible;
             set =>
-                Set(nameof(CollectionPageVisible), ref _collectionPageVisible,
+                Set(nameof(CollectionPageVisible), ref _collectionPageVisible,          
                     value);
         }
         private bool _collectionPageVisible;

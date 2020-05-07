@@ -11,7 +11,7 @@ namespace NEUVolunteer.Service.Implements
 {
     public class ManagerImplementation : IManager
     {
-        private const string dbname = "NEUVolunteer.db";
+        private const string dbname = "NEUVolunteer.NEUVolunteer.db";
         private static readonly string volunteerdbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), dbname);
         private SQLiteAsyncConnection _connection;
         private SQLiteAsyncConnection Connection =>

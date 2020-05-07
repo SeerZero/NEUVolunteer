@@ -1,14 +1,15 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using NEUVolunteer.Service;
+using Xamarin.Essentials;
 
 namespace NEUVolunteer.ViewModel
 {
-    public class LoginPageViewModel : ViewModelBase
+    public class LoginPageViewModel : NavigationViewModelBase
     {
-        public LoginPageViewModel(IVolunteer x, IManager y, IAlertService alertService)
+        public LoginPageViewModel(INavigationService navigationService, IVolunteer x, IManager y, IAlertService alertService) : base(
+            navigationService)
         {
-            UserName = "123";
             _vi = x;
             _ = _vi.Init();
             _mi = y;
@@ -36,8 +37,6 @@ namespace NEUVolunteer.ViewModel
         public RelayCommand ButtonCommand =>
             _buttonCommand ?? (_buttonCommand = new RelayCommand(async () =>
         {
-            UserName = "12345";
-
             if (_username == null || _password == null || _username == "" || _password == "")
             {
                 await _alertService.ShowAlertAsync("登录失败", "用户名或密码不能为空", "确认");
@@ -56,6 +55,7 @@ namespace NEUVolunteer.ViewModel
                 {
                     //密码正确，跳转界面
                     await _alertService.ShowAlertAsync("登录成功", "成功", "确认");
+                    _navigationService.NavigationTo(NavigationServiceConstants.AdminPage, false);
                 }
 
             }
@@ -73,7 +73,7 @@ namespace NEUVolunteer.ViewModel
                 {
                     //密码正确，跳转界面
                     await _alertService.ShowAlertAsync("登录成功", "成功", "确认");
-
+                    _navigationService.NavigationTo(NavigationServiceConstants.HomePage, false);
 
                 }
             }

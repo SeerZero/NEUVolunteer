@@ -8,7 +8,7 @@ namespace NEUVolunteer.ViewModel
     {
         public WelcomePageViewModel WelcomePageViewModel =>
             SimpleIoc.Default.GetInstance<WelcomePageViewModel>();
-        public LoginPageViewModel LoginPageVeiwModel =>
+        public LoginPageViewModel LoginPageViewModel =>
             SimpleIoc.Default.GetInstance<LoginPageViewModel>();
         public HomePageViewModel HomePageVeiwModel =>
              SimpleIoc.Default.GetInstance<HomePageViewModel>();
