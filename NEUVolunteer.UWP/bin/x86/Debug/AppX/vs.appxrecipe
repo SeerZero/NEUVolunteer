@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-05-07T06:44:21.226</Modified>
+      <Modified>2020-05-07T07:00:35.946</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\NEUVolunteer.UWP.exe">
       <PackagePath>entrypoint\NEUVolunteer.UWP.exe</PackagePath>
-      <Modified>2020-05-07T06:44:19.742</Modified>
+      <Modified>2020-05-07T07:00:33.227</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\wwei\.nuget\packages\behaviors.forms\1.4.0\lib\netstandard1.0\Behaviors.dll">
       <PackagePath>Behaviors.dll</PackagePath>
@@ -788,7 +788,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer\bin\Debug\netstandard2.0\NEUVolunteer.dll">
       <PackagePath>NEUVolunteer.dll</PackagePath>
-      <Modified>2020-05-07T06:47:40.362</Modified>
+      <Modified>2020-05-07T07:08:23.167</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -935,11 +935,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\img.png">
       <PackagePath>img.png</PackagePath>
-      <Modified>2020-05-07T06:14:10.831</Modified>
+      <Modified>2020-05-07T06:58:32.012</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\login2.png">
       <PackagePath>login2.png</PackagePath>
-      <Modified>2020-05-07T06:14:10.833</Modified>
+      <Modified>2020-05-07T06:58:32.013</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -951,15 +951,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
       <PackagePath>Microsoft.UI.Xaml\DensityStyles\Compact.xbf</PackagePath>
-      <Modified>2020-05-07T06:44:19.551</Modified>
+      <Modified>2020-05-07T07:00:33.031</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-05-07T06:44:19.552</Modified>
+      <Modified>2020-05-07T07:00:33.031</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-05-07T06:44:19.552</Modified>
+      <Modified>2020-05-07T07:00:33.031</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.16299.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -975,11 +975,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-05-07T06:15:34.564</Modified>
+      <Modified>2020-05-07T07:00:34.981</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\vs2019\Volunteer\NEUVolunteer.UWP\bin\x86\Debug\Core\NEUVolunteer.UWP.exe">
       <PackagePath>NEUVolunteer.UWP.exe</PackagePath>
-      <Modified>2020-05-07T06:44:21.218</Modified>
+      <Modified>2020-05-07T07:00:35.938</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -6,6 +6,8 @@
              mc:Ignorable="d"
              x:Class="NEUVolunteer.View.LoginPage"
              BindingContext="{Binding LoginPageModel,Source={StaticResource ViewModelLocator}}">
+    
+    
     <Grid BackgroundColor="LightSteelBlue">
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
             <Image Source="img.png" 
