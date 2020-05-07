@@ -12,3 +12,16 @@ C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\obj\Debug\netstandard2.0\XamlC.st
 C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.dll
 C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\obj\Debug\netstandard2.0\ref\NEUVolunteer.dll
 C:\Users\wwei\source\NEUVolunteer\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.pdb
+C:\Users\dell\source\repos\test1\NEUVolunteer\bin\Debug\netstandard2.0\NEUVolunteer.deps.json
+C:\Users\dell\source\repos\test1\NEUVolunteer\bin\Debug\netstandard2.0\NEUVolunteer.dll
+C:\Users\dell\source\repos\test1\NEUVolunteer\bin\Debug\netstandard2.0\ref\NEUVolunteer.dll
+C:\Users\dell\source\repos\test1\NEUVolunteer\bin\Debug\netstandard2.0\NEUVolunteer.pdb
+C:\Users\dell\source\repos\test1\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.csprojAssemblyReference.cache
+C:\Users\dell\source\repos\test1\NEUVolunteer\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\dell\source\repos\test1\NEUVolunteer\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\dell\source\repos\test1\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.AssemblyInfoInputs.cache
+C:\Users\dell\source\repos\test1\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.AssemblyInfo.cs
+C:\Users\dell\source\repos\test1\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.dll
+C:\Users\dell\source\repos\test1\NEUVolunteer\obj\Debug\netstandard2.0\ref\NEUVolunteer.dll
+C:\Users\dell\source\repos\test1\NEUVolunteer\obj\Debug\netstandard2.0\NEUVolunteer.pdb
+C:\Users\dell\source\repos\test1\NEUVolunteer\obj\Debug\netstandard2.0\XamlC.stamp

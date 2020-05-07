@@ -123,6 +123,12 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MvvmLightLibs">
+      <Version>5.4.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.6.292</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
@@ -132,5 +138,11 @@
       <Project>{932E418F-5749-44E8-8CC0-F1D6D9CBD2B3}</Project>
       <Name>NEUVolunteer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\login2.png" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -11,6 +11,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="img.png" />
+    <None Remove="login2.png" />
+    <None Remove="NEUVolunteer.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="img.png" >
+      <LogicalName>img.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login2.png" >
+      <LogicalName>login2.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NEUVolunteer.db">
+      <LogicalName>NEUVolunteer.db</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>

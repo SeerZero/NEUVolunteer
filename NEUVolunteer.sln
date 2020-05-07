@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NEUVolunteer.Android", "NEU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NEUVolunteer.iOS", "NEUVolunteer.iOS\NEUVolunteer.iOS.csproj", "{A340D5DE-A8A4-4C1D-A669-BC6EC8002FEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NEUVolunteer", "NEUVolunteer\NEUVolunteer.csproj", "{91F940A1-4E55-450D-9083-125974C493A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NEUVolunteer", "NEUVolunteer\NEUVolunteer.csproj", "{91F940A1-4E55-450D-9083-125974C493A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
