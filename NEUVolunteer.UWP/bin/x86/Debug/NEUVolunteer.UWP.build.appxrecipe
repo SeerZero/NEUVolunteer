@@ -31,8 +31,14 @@
     <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\behaviors.forms\1.4.0\lib\netstandard1.0\Behaviors.dll">
       <PackagePath>Behaviors.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\castle.core\4.4.0\lib\netstandard1.5\Castle.Core.dll">
+      <PackagePath>Castle.Core.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\commonservicelocator\2.0.2\lib\netstandard2.0\CommonServiceLocator.dll">
       <PackagePath>CommonServiceLocator.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\moq\4.14.1\lib\netstandard2.0\Moq.dll">
+      <PackagePath>Moq.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\uap10.0\GalaSoft.MvvmLight.Extras.dll">
       <PackagePath>GalaSoft.MvvmLight.Extras.dll</PackagePath>
@@ -42,6 +48,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\uap10.0\GalaSoft.MvvmLight.dll">
       <PackagePath>GalaSoft.MvvmLight.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\newtonsoft.json\12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\refractored.mvvmhelpers\1.6.1-beta\lib\netstandard2.0\MvvmHelpers.dll">
+      <PackagePath>MvvmHelpers.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.9\runtimes\win10-x86\nativeassets\uap10.0.15138\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
@@ -457,9 +469,6 @@
     <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.9\runtimes\win10-x86\lib\uap10.0.15138\System.Threading.Tasks.Dataflow.dll">
       <PackagePath>System.Threading.Tasks.Dataflow.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.9\runtimes\win10-x86\lib\uap10.0.15138\System.Threading.Tasks.Extensions.dll">
-      <PackagePath>System.Threading.Tasks.Extensions.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.9\runtimes\win10-x86\lib\uap10.0.15138\System.Threading.Tasks.Parallel.dll">
       <PackagePath>System.Threading.Tasks.Parallel.dll</PackagePath>
     </AppxPackagedFile>
@@ -535,23 +544,29 @@
     <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.9\runtimes\win10-x86\lib\uap10.0.15138\netstandard.dll">
       <PackagePath>netstandard.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\sqlite-net-pcl\1.6.292\lib\netstandard1.1\SQLite-net.dll">
+    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\sqlite-net-pcl\1.7.302-beta\lib\netstandard2.0\SQLite-net.dll">
       <PackagePath>SQLite-net.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\sqlitepclraw.bundle_green\1.1.13\lib\uap10.0\SQLitePCLRaw.batteries_green.dll">
-      <PackagePath>SQLitePCLRaw.batteries_green.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\sqlitepclraw.bundle_green\1.1.13\lib\uap10.0\SQLitePCLRaw.batteries_v2.dll">
+    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\sqlitepclraw.bundle_green\2.0.1\lib\netstandard2.0\SQLitePCLRaw.batteries_v2.dll">
       <PackagePath>SQLitePCLRaw.batteries_v2.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\sqlitepclraw.core\1.1.13\lib\uap10.0\SQLitePCLRaw.core.dll">
+    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\sqlitepclraw.core\2.0.1\lib\netstandard2.0\SQLitePCLRaw.core.dll">
       <PackagePath>SQLitePCLRaw.core.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\sqlitepclraw.lib.e_sqlite3.v140\1.1.13\runtimes\win10-x86\native\e_sqlite3.dll">
+    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\sqlitepclraw.lib.e_sqlite3\2.0.1\runtimes\win10-x86\nativeassets\uap10.0\e_sqlite3.dll">
       <PackagePath>e_sqlite3.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\sqlitepclraw.provider.e_sqlite3.uwp10\1.1.13\lib\uap10.0\SQLitePCLRaw.provider.e_sqlite3.dll">
+    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\sqlitepclraw.provider.e_sqlite3\2.0.1\lib\uap10.0\SQLitePCLRaw.provider.e_sqlite3.dll">
       <PackagePath>SQLitePCLRaw.provider.e_sqlite3.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\system.memory\4.5.3\lib\netstandard2.0\System.Memory.dll">
+      <PackagePath>System.Memory.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\system.runtime.compilerservices.unsafe\4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
+      <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\system.threading.tasks.extensions\4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll">
+      <PackagePath>System.Threading.Tasks.Extensions.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
@@ -570,6 +585,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\xamarin.forms\4.4.0.991265\lib\uap10.0\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\xamarin.forms.extended.infinitescrolling\1.0.0-preview2\lib\netstandard1.0\Xamarin.Forms.Extended.InfiniteScrolling.dll">
+      <PackagePath>Xamarin.Forms.Extended.InfiniteScrolling.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer\bin\Debug\netstandard2.0\NEUVolunteer.dll">
       <PackagePath>NEUVolunteer.dll</PackagePath>
@@ -688,20 +706,26 @@
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\img.png">
+      <PackagePath>img.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\login.png">
+      <PackagePath>login.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\login2.png">
+      <PackagePath>login2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\logo.png">
+      <PackagePath>logo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\slogn.png">
+      <PackagePath>slogn.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\NEUVolunteer.UWP.xr.xml">
       <PackagePath>NEUVolunteer.UWP.xr.xml</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
-      <PackagePath>Microsoft.UI.Xaml\DensityStyles\Compact.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\App.xbf">
-      <PackagePath>App.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\MainPage.xbf">
-      <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.16299.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:b="clr-namespace:Behaviors;assembly=Behaviors"
+             xmlns:bindingConverters="clr-namespace:NEUVolunteer.Models.BindingConverters;assembly=NEUVolunteer"
+             mc:Ignorable="d"
+             x:Class="NEUVolunteer.Views.WelcomePage"
+             BindingContext="{Binding WelcomePageViewModel,Source={StaticResource ViewModelLocator}}">
+    <ContentPage.Resources>
+        <bindingConverters:BytesToImageSourceConverter x:Key="BytesToImageSource" />
+    </ContentPage.Resources>
+    <ContentPage.Behaviors>
+        <b:EventHandlerBehavior EventName="Appearing">
+            <b:ActionCollection>
+                <b:InvokeCommandAction Command="{Binding AppearCommand}"/>
+            </b:ActionCollection>
+        </b:EventHandlerBehavior>
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+        <Grid ColumnSpacing="0" RowSpacing="0">
+            <StackLayout d:IsVisible="True" IsVisible="{Binding FirstPageVisible}"
+                         HorizontalOptions="Center"
+                         VerticalOptions="FillAndExpand">
+                <Image Source="slogn.png" Aspect="AspectFit"
+                       WidthRequest="200"
+                       Margin="0,100,0,0"/>
+
+                <Label Text="志愿东大App" TextColor="#d61519" FontAttributes="Bold"
+                       VerticalOptions="EndAndExpand"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,50"/>
+            </StackLayout>
+
+            <Grid d:IsVisible="False" IsVisible="{Binding SecondPageVisible}" ColumnSpacing="0" RowSpacing="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="48"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Row="0" 
+                           Source="{Binding TodayImage.ImageBytes, Converter={StaticResource BytesToImageSource}}"
+                           Aspect="AspectFill"/>
+
+                    <Label  Grid.Row="1" 
+                            Padding="48,0,48,16"
+                            Text="{Binding TodaySentence}"/>
+
+                    <Grid Grid.Row="2" ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="1" Source="Logo.png" Aspect="AspectFit" Scale="0.8"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

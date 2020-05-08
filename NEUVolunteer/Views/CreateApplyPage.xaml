@@ -16,6 +16,11 @@
     </ContentPage.Behaviors>
     <ContentPage.Content>
         <StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="{StaticResource MainGreen}">
+                <Button Text="返回" Margin="4" HorizontalOptions="Start"
+                        BackgroundColor="{StaticResource MainGreen}" TextColor="White"
+                        Command="{Binding BackRelayCommand}"/>
+            </StackLayout>
             <ScrollView>
                 <Grid Margin="12"
                       RowSpacing="4"
@@ -37,7 +42,7 @@
 
                     <Label Grid.Row="0" Grid.Column="0" 
                            Grid.ColumnSpan="2"
-                           Text="活动信息"
+                           Text="活动开展申请"
                            TextColor="Black"
                            FontSize="Title"/>
 
@@ -45,6 +50,7 @@
                            Text="活动名称"
                            VerticalOptions="Center"/>
                     <Picker Grid.Row="1" Grid.Column="1"
+                            VerticalOptions="Center"
                             ItemsSource="{Binding ActivityInfos}"
                             ItemDisplayBinding="{Binding ActivityName}"
                             SelectedIndex="{Binding ActivityId, Mode=TwoWay}"/>
@@ -120,7 +126,7 @@
                            Text="{Binding RequestNumber}"/>
                 </Grid>
             </ScrollView>
-            <Button Text="确认申报"
+            <Button Text="确认申请"
                     Margin="8"
                     CornerRadius="8"
                     VerticalOptions="EndAndExpand"

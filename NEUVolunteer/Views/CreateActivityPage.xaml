@@ -16,6 +16,11 @@
     </ContentPage.Behaviors>
     <ContentPage.Content>
         <StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="{StaticResource MainGreen}">
+                <Button Text="返回" Margin="4" HorizontalOptions="Start"
+                        BackgroundColor="{StaticResource MainGreen}" TextColor="White"
+                        Command="{Binding BackRelayCommand}"/>
+            </StackLayout>
             <Grid Margin="12"
                   RowSpacing="4"
                   ColumnSpacing="12">
@@ -33,21 +38,13 @@
 
                 <Label Grid.Row="0" Grid.Column="0" 
                        Grid.ColumnSpan="2"
-                       Text="请填写活动申报信息"
+                       Text="新活动信息"
                        TextColor="Black"
                        FontSize="Title"
                        Margin="0,0,0,8"/>
 
-                <Label Grid.Row="1" Grid.Column="0"
-                       Text="名称"
-                       VerticalOptions="Center"
-                       FontSize="Body"/>
-                <Entry Grid.Row="1" Grid.Column="1"
-                       FontSize="Body"
-                       Text="{Binding ActivityName, Mode=TwoWay}"/>
-
                 <Label Grid.Row="2" Grid.Column="0"
-                       Text="类别"
+                       Text="活动类别"
                        VerticalOptions="Center"
                        FontSize="Body"/>
                 <Picker Grid.Row="2" Grid.Column="1"
@@ -55,8 +52,17 @@
                         ItemDisplayBinding="{Binding TypeName}"
                         SelectedIndex="{Binding ActivityType, Mode=TwoWay}"/>
 
+                <Label Grid.Row="1" Grid.Column="0"
+                       Text="活动名称"
+                       VerticalOptions="Center"
+                       FontSize="Body"/>
+                <Entry Grid.Row="1" Grid.Column="1"
+                       FontSize="Body"
+                       Text="{Binding ActivityName, Mode=TwoWay}"/>
+
+
                 <Label Grid.Row="3" Grid.Column="0"
-                       Text="地点"
+                       Text="活动地点"
                        VerticalOptions="Center"
                        FontSize="Body"/>
                 <Entry Grid.Row="3" Grid.Column="1"
@@ -64,7 +70,7 @@
                        Text="{Binding ActivityPlace, Mode=TwoWay}"/>
 
                 <Label Grid.Row="4" Grid.Column="0"
-                       Text="简介"
+                       Text="活动简介"
                        VerticalOptions="Center"
                        FontSize="Body"/>
                 <Editor Grid.Row="4" Grid.Column="1"

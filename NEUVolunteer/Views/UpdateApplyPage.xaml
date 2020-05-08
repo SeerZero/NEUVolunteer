@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:b="clr-namespace:Behaviors;assembly=Behaviors"
+             xmlns:ls="clr-namespace:NEUVolunteer.Services;assembly=NEUVolunteer"
+             mc:Ignorable="d"
+             x:Class="NEUVolunteer.Views.UpdateApplyPage"
+             BindingContext="{Binding UpdateApplyPageViewModel, Source={StaticResource ViewModelLocator}}"
+             ls:NavigationContext.NavigationParameter="{Binding Apply}">
+    <ContentPage.Behaviors>
+        <b:EventHandlerBehavior EventName="Appearing">
+            <b:ActionCollection>
+                <b:InvokeCommandAction Command="{Binding PageAppearingCommand}"/>
+            </b:ActionCollection>
+        </b:EventHandlerBehavior>
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="{StaticResource MainGreen}">
+                <Button Text="返回" Margin="4" HorizontalOptions="Start"
+                        BackgroundColor="{StaticResource MainGreen}" TextColor="White"
+                        Command="{Binding BackRelayCommand}"/>
+            </StackLayout>
+            <ScrollView>
+                <Grid Margin="12"
+                      RowSpacing="4"
+                      ColumnSpacing="12">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" 
+                           Grid.ColumnSpan="2"
+                           Text="活动开展申请"
+                           TextColor="Black"
+                           FontSize="Title"/>
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="开始时间"
+                           VerticalOptions="Center"/>
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <DatePicker Grid.Row="0" Grid.Column="0"
+                                    Format="D"
+                                    Date="{Binding StartDate, Mode=TwoWay}"/>
+                        <TimePicker Grid.Row="0" Grid.Column="1"
+                                    Format="T"
+                                    Time="{Binding StartTime, Mode=TwoWay}"/>
+                    </Grid>
+
+                    <Label Grid.Row="2" Grid.Column="0"
+                           Text="结束时间"
+                           VerticalOptions="Center"/>
+                    <Grid Grid.Row="2" Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <DatePicker Grid.Row="0" Grid.Column="0"
+                                    Format="D"
+                                    Date="{Binding EndDate, Mode=TwoWay}"/>
+                        <TimePicker Grid.Row="0" Grid.Column="1"
+                                    Format="T"
+                                    Time="{Binding EndTime, Mode=TwoWay}"/>
+                    </Grid>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="集合时间"
+                           VerticalOptions="Center"/>
+                    <Grid Grid.Row="3" Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <DatePicker Grid.Row="0" Grid.Column="0"
+                                    Format="D"
+                                    Date="{Binding GatherDate, Mode=TwoWay}"/>
+                        <TimePicker Grid.Row="0" Grid.Column="1"
+                                    Format="T"
+                                    Time="{Binding GatherTime, Mode=TwoWay}"/>
+                    </Grid>
+
+                    <Label Grid.Row="4" Grid.Column="0"
+                           Text="集合地点"
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Row="4" Grid.Column="1"
+                           Text="{Binding Apply.GatherPlace, Mode=TwoWay}"/>
+
+                    <Label Grid.Row="5" Grid.Column="0"
+                           Text="活动人数"
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Row="5" Grid.Column="1"
+                           Keyboard="Numeric"
+                           Text="{Binding Apply.RequestNumber, Mode=TwoWay}"/>
+                </Grid>
+            </ScrollView>
+            <Button Text="确认修改"
+                    Margin="8"
+                    CornerRadius="8"
+                    VerticalOptions="EndAndExpand"
+                    FontSize="Body"
+                    Command="{Binding UpdateButtonCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

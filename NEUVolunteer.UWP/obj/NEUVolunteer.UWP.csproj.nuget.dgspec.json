@@ -43,9 +43,17 @@
       "frameworks": {
         "uap10.0.16299": {
           "dependencies": {
+            "Behaviors.Forms": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
             "Microsoft.NETCore.UniversalWindowsPlatform": {
               "target": "Package",
               "version": "[6.1.9, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -130,6 +138,10 @@
               "target": "Package",
               "version": "[1.4.0, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.14.1, )"
+            },
             "MvvmLightLibs": {
               "target": "Package",
               "version": "[5.4.1.1, )"
@@ -140,6 +152,14 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Refractored.MvvmHelpers": {
+              "target": "Package",
+              "version": "[1.6.1-beta, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.3.1, )"
@@ -148,9 +168,13 @@
               "target": "Package",
               "version": "[4.4.0.991265, )"
             },
+            "Xamarin.Forms.Extended.InfiniteScrolling": {
+              "target": "Package",
+              "version": "[1.0.0-preview2, )"
+            },
             "sqlite-net-pcl": {
               "target": "Package",
-              "version": "[1.6.292, )"
+              "version": "[1.7.302-beta, )"
             }
           },
           "imports": [

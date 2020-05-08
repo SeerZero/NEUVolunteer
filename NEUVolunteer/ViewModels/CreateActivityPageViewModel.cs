@@ -1,20 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using NEUVolunteer.Models;
-using NEUVolunteer.Services.implements;
-using NEUVolunteer.Services.interfaces;
+using NEUVolunteer.Services;
 using Xamarin.Forms.Internals;
 
 namespace NEUVolunteer.ViewModels
 {
-    public class CreateActivityPageViewModel : ViewModelBase {
+    public class CreateActivityPageViewModel : NavigationViewModelBase {
 
-        public CreateActivityPageViewModel(IDBService dbService) {
+        public CreateActivityPageViewModel(INavigationService navigationService, IDBService dbService) : base(
+            navigationService)
+        {
             _dbService = dbService;
             ActivityTypes = new ObservableCollection<ActivityType>();
         }
@@ -78,7 +77,13 @@ namespace NEUVolunteer.ViewModels
         internal async Task CreateButtonCommandFunction() {
             Console.WriteLine(ActivityName + "\n" + ActivityType + "\n" + ActivityPlace + "\n" + ActivityBrief);
             await _dbService.AddActivityInfo(ActivityName, ActivityPlace, ActivityBrief, ActivityType + 1);
+            _navigationService.NavigationBack();
         }
+
+        private RelayCommand _backButtonCommand;
+
+        public RelayCommand BackRelayCommand =>
+            _backButtonCommand ?? (_backButtonCommand = new RelayCommand(() => _navigationService.NavigationBack()));
 
     }
 }
