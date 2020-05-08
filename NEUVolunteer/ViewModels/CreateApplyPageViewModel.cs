@@ -9,9 +9,10 @@ using Xamarin.Forms.Internals;
 
 namespace NEUVolunteer.ViewModels
 {
-    public class CreateApplyPageViewModel : ViewModelBase
+    public class CreateApplyPageViewModel : NavigationViewModelBase
     {
-        public CreateApplyPageViewModel(IDBService dbService)
+        public CreateApplyPageViewModel(INavigationService navigationService, IDBService dbService) : base(
+            navigationService)
         {
             _dbService = dbService;
             ActivityInfos = new ObservableCollection<ActivityInfo>();
@@ -124,6 +125,7 @@ namespace NEUVolunteer.ViewModels
             var end = TimeToString(EndDate, EndTime);
             await _dbService.AddApplyAsync(ActivityId + 1, User.UserId, 
                 gather, GatherPlace, start, end, RequestNumber);
+            _navigationService.NavigationBack();
         }
 
         internal string TimeToString(DateTime date, TimeSpan time) {
@@ -162,6 +164,10 @@ namespace NEUVolunteer.ViewModels
             return s;
         }
 
-        
+        private RelayCommand _backButtonCommand;
+
+        public RelayCommand BackRelayCommand =>
+            _backButtonCommand ?? (_backButtonCommand = new RelayCommand(() => _navigationService.NavigationBack()));
+
     }
 }

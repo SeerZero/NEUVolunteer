@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-05-08T07:51:42.713</Modified>
+      <Modified>2020-05-08T11:19:08.145</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\NEUVolunteer.UWP.exe">
       <PackagePath>entrypoint\NEUVolunteer.UWP.exe</PackagePath>
-      <Modified>2020-05-08T07:51:41.200</Modified>
+      <Modified>2020-05-08T11:13:25.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsy529\.nuget\packages\behaviors.forms\1.4.0\lib\netstandard1.0\Behaviors.dll">
       <PackagePath>Behaviors.dll</PackagePath>
@@ -788,7 +788,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer\bin\Debug\netstandard2.0\NEUVolunteer.dll">
       <PackagePath>NEUVolunteer.dll</PackagePath>
-      <Modified>2020-05-08T07:55:51.919</Modified>
+      <Modified>2020-05-08T11:19:03.707</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -937,9 +937,21 @@
       <PackagePath>img.png</PackagePath>
       <Modified>2020-05-08T00:34:35.899</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\login.png">
+      <PackagePath>login.png</PackagePath>
+      <Modified>2020-05-08T08:43:17.152</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\login2.png">
       <PackagePath>login2.png</PackagePath>
       <Modified>2020-05-08T00:34:35.900</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\logo.png">
+      <PackagePath>logo.png</PackagePath>
+      <Modified>2020-05-08T08:27:34.516</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\slogn.png">
+      <PackagePath>slogn.png</PackagePath>
+      <Modified>2020-05-08T08:47:09.725</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -951,15 +963,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
       <PackagePath>Microsoft.UI.Xaml\DensityStyles\Compact.xbf</PackagePath>
-      <Modified>2020-05-08T07:51:40.939</Modified>
+      <Modified>2020-05-08T11:13:24.956</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-05-08T07:51:40.939</Modified>
+      <Modified>2020-05-08T11:13:24.956</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-05-08T07:51:40.939</Modified>
+      <Modified>2020-05-08T11:13:24.956</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.16299.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -975,11 +987,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-05-08T04:02:10.989</Modified>
+      <Modified>2020-05-08T11:19:07.386</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\Core\NEUVolunteer.UWP.exe">
       <PackagePath>NEUVolunteer.UWP.exe</PackagePath>
-      <Modified>2020-05-08T07:51:42.706</Modified>
+      <Modified>2020-05-08T11:19:08.138</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

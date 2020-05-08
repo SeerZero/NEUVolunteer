@@ -20,15 +20,18 @@
     </ContentPage.Behaviors>
     <ContentPage.Content>
         <Grid ColumnSpacing="0" RowSpacing="0">
+            <StackLayout d:IsVisible="True" IsVisible="{Binding FirstPageVisible}"
+                         HorizontalOptions="Center"
+                         VerticalOptions="FillAndExpand">
+                <Image Source="slogn.png" Aspect="AspectFit"
+                       WidthRequest="200"
+                       Margin="0,100,0,0"/>
 
-            <Grid d:IsVisible="True" IsVisible="{Binding FirstPageVisible}">
-                <Label Text="东大志愿"
-                       TextColor="YellowGreen"
-                       FontSize="66"
-                       VerticalOptions="Center" 
+                <Label Text="志愿东大App" TextColor="#d61519" FontAttributes="Bold"
+                       VerticalOptions="EndAndExpand"
                        HorizontalOptions="Center"
-                       />
-            </Grid>
+                       Margin="0,0,0,50"/>
+            </StackLayout>
 
             <Grid d:IsVisible="False" IsVisible="{Binding SecondPageVisible}" ColumnSpacing="0" RowSpacing="0">
                 <Grid>
@@ -51,7 +54,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="1" Source="Logo.png" Aspect="AspectFit" Scale="0.4"/>
+                        <Image Grid.Column="1" Source="Logo.png" Aspect="AspectFit" Scale="0.8"/>
                     </Grid>
                 </Grid>
             </Grid>

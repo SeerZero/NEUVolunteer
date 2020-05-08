@@ -900,3 +900,4 @@ D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\obj\x86\Debug\qualifiers.txt.inte
 D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\obj\x86\Debug\ProjectArchitectures.txt
 D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636160427180000000.json
+D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\Core\ForBundle\AppxManifest.xml

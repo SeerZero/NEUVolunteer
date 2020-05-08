@@ -36,7 +36,7 @@ namespace NEUVolunteer.ViewModels
                 Set(nameof(InformationPageVisible), ref _informationPageVisible,
                     value);
         }
-        private bool _informationPageVisible = true;
+        private bool _informationPageVisible = false;
 
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace NEUVolunteer.ViewModels
                 Set(nameof(ActivityPageVisible), ref _activityPageVisible,
                     value);
         }
-        private bool _activityPageVisible;
+        private bool _activityPageVisible = true;
 
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace NEUVolunteer.ViewModels
                 Set(nameof(MyPageVisible), ref _myPageVisible,
                     value);
         }
-        private bool _myPageVisible;
+        private bool _myPageVisible = false;
 
 
         /// <summary>

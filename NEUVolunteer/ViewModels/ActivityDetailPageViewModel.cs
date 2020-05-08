@@ -6,9 +6,10 @@ using NEUVolunteer.Services;
 
 namespace NEUVolunteer.ViewModels
 {
-    public class ActivityDetailPageViewModel : ViewModelBase{
+    public class ActivityDetailPageViewModel : NavigationViewModelBase{
 
-        public ActivityDetailPageViewModel(IDBService dbService) {
+        public ActivityDetailPageViewModel(INavigationService navigationService, IDBService dbService) : base(
+            navigationService) {
             _dbService = dbService;
         }
 
@@ -206,6 +207,16 @@ namespace NEUVolunteer.ViewModels
             await SetButtonFunction();
         }
 
+        private RelayCommand _updateButtonCommand;
+
+        public RelayCommand UpdateButtonCommand =>
+            _updateButtonCommand ?? (_updateButtonCommand = new RelayCommand(
+                () => UpdateButtonFunction(Apply)));
+
+        private void UpdateButtonFunction(Apply apply) {
+            _navigationService.NavigationTo(NavigationServiceConstants.UpdateApplyPage, apply);
+        }
+
         private RelayCommand _restoreButtonCommand;
 
         public RelayCommand RestoreButtonCommand =>
@@ -218,6 +229,11 @@ namespace NEUVolunteer.ViewModels
             Apply = await _dbService.GetApplyAsync(Apply.ApplyId);
             await SetButtonFunction();
         }
+
+        private RelayCommand _backButtonCommand;
+
+        public RelayCommand BackRelayCommand =>
+            _backButtonCommand ?? (_backButtonCommand = new RelayCommand(() => _navigationService.NavigationBack()));
 
     }
 }

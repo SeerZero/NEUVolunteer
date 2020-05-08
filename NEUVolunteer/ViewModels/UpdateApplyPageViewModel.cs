@@ -7,9 +7,11 @@ using NEUVolunteer.Services;
 
 namespace NEUVolunteer.ViewModels
 {
-    public class UpdateApplyPageViewModel : ViewModelBase
+    public class UpdateApplyPageViewModel : NavigationViewModelBase
     {
-        public UpdateApplyPageViewModel(IDBService dbService) {
+        public UpdateApplyPageViewModel(INavigationService navigationService,IDBService dbService) : base(
+            navigationService)
+        {
             _dbService = dbService;
         }
 
@@ -29,8 +31,6 @@ namespace NEUVolunteer.ViewModels
                 new RelayCommand(async () => await PageAppearingCommandFunction()));
 
         internal async Task PageAppearingCommandFunction() {
-            Apply = await _dbService.GetApplyAsync(2);
-
             StartDate = StringToDateTime(Apply.StartTime);
             StartTime = StringToTimeSpan(Apply.StartTime);
             EndDate = StringToDateTime(Apply.EndTime);
@@ -101,6 +101,7 @@ namespace NEUVolunteer.ViewModels
             Apply.EndTime = TimeToString(EndDate, EndTime);
             Apply.GatherTime = TimeToString(GatherDate, GatherTime);
             await _dbService.UpdateApplyAsync(Apply);
+            _navigationService.NavigationBack();
         }
 
         internal string TimeToString(DateTime date, TimeSpan time)
@@ -196,5 +197,10 @@ namespace NEUVolunteer.ViewModels
             TimeSpan t = new TimeSpan(int.Parse(hour), int.Parse(min), 0);
             return t;
         }
+
+        private RelayCommand _backButtonCommand;
+
+        public RelayCommand BackRelayCommand =>
+            _backButtonCommand ?? (_backButtonCommand = new RelayCommand(() => _navigationService.NavigationBack()));
     }
 }

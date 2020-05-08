@@ -709,23 +709,23 @@
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\img.png">
       <PackagePath>img.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\login.png">
+      <PackagePath>login.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\login2.png">
       <PackagePath>login2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\logo.png">
+      <PackagePath>logo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\slogn.png">
+      <PackagePath>slogn.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\NEUVolunteer.UWP.xr.xml">
       <PackagePath>NEUVolunteer.UWP.xr.xml</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
-      <PackagePath>Microsoft.UI.Xaml\DensityStyles\Compact.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\App.xbf">
-      <PackagePath>App.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\MainPage.xbf">
-      <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.16299.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>

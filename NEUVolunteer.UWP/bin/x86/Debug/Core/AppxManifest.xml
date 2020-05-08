@@ -7,7 +7,7 @@
 
   有关程序包清单文件的详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=241727
  -->
-  <Identity Name="2c7593ac-c114-40c3-ae41-899cc74a3580" Publisher="CN=464abb99-8734-4ca8-ac0d-d50adf0a85f2" Version="1.0.0.0" ProcessorArchitecture="x86" />
+  <Identity Name="2c7593ac-c114-40c3-ae41-899cc74a3580" Publisher="CN=464abb99-8734-4ca8-ac0d-d50adf0a85f2" Version="1.1.1.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>NEUVolunteer.UWP</DisplayName>

@@ -69,6 +69,6 @@ namespace NEUVolunteer.Services
         /// <summary>
         /// 版本。
         /// </summary>
-        public const int Version = 8;
+        public const int Version = 10;
     }
 }

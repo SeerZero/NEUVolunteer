@@ -17,7 +17,7 @@ namespace NEUVolunteer.Services
         /// <param name="canBack">导航后是否能够返回当前页面</param>
         void NavigationTo(string pageKey, bool canBack = true);
 
-        void NavigationTo(String pageKey, object parameter);
+        void NavigationTo(string pageKey, object parameter);
         /// <summary>
         /// 返回前一个页面
         /// </summary>
@@ -34,6 +34,9 @@ namespace NEUVolunteer.Services
         public static readonly string NewsReadPage = nameof(NewsReadPage);
         public static readonly string ActivityReadPage = nameof(ActivityReadPage);
         public static readonly string ActivityDetailPage = nameof(ActivityDetailPage);
+        public static readonly string CreateActivityPage = nameof(CreateActivityPage);
+        public static readonly string CreateApplyPage = nameof(CreateApplyPage);
+        public static readonly string UpdateApplyPage = nameof(UpdateApplyPage);
 
         public static readonly Dictionary<string, Type> PageKeyTypeDictionary =
             new Dictionary<string, Type> {
@@ -43,7 +46,10 @@ namespace NEUVolunteer.Services
                 {HomePage,typeof(HomePage) },
                 {NewsReadPage, typeof(NewsReadPage) },
                 {ActivityReadPage,typeof(ActivityReadPage) },
-                {ActivityDetailPage, typeof(ActivityDetailPage)}
+                {ActivityDetailPage, typeof(ActivityDetailPage)},
+                {CreateActivityPage, typeof(CreateActivityPage)},
+                {CreateApplyPage, typeof(CreateApplyPage)},
+                {UpdateApplyPage, typeof(UpdateApplyPage)}
             };
     }
 }

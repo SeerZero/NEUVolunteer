@@ -3,17 +3,101 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:b="clr-namespace:Behaviors;assembly=Behaviors"
+             xmlns:bc="clr-namespace:NEUVolunteer.Models.BindingConverters;assembly=NEUVolunteer"
              mc:Ignorable="d"
              x:Class="NEUVolunteer.Views.AdminPage"
              BindingContext="{Binding AdminPageViewModel,Source={StaticResource ViewModelLocator}}">
+    <ContentPage.Behaviors>
+        <b:EventHandlerBehavior EventName="Appearing">
+            <b:ActionCollection>
+                <b:InvokeCommandAction Command="{Binding PageAppearingCommand}"/>
+            </b:ActionCollection>
+        </b:EventHandlerBehavior>
+    </ContentPage.Behaviors>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <bc:ItemToDetailConverter x:Key="ItemToDetailConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="AdminPage!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="Button1"/>
-            <Button Text="Button2"/>
-            <Button Text="Button3"/>
+            <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="{StaticResource MainGreen}">
+                <Label Text="您好，管理员！" TextColor="White" 
+                       Margin="8" FontSize="Title"/>
+            </StackLayout>
+            <Label Text="活动开展列表" TextColor="Black" FontSize="16" Margin="8" />
+            <StackLayout>
+                <ScrollView>
+                    <ListView ItemsSource="{Binding AllApplyDetailCollection}">
+                        <ListView.Behaviors>
+                            <b:EventHandlerBehavior EventName="ItemTapped">
+                                <b:ActionCollection>
+                                    <b:InvokeCommandAction
+                                        Command="{Binding ApplyItemTappedCommand}"
+                                        Converter="{StaticResource ItemToDetailConverter}"/>
+                                </b:ActionCollection>
+                            </b:EventHandlerBehavior>
+                        </ListView.Behaviors>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Margin="16">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0"
+                                                   TextColor="Black" FontSize="16"
+                                                   Text="{Binding Info.ActivityName}"/>
+                                            <Label Grid.Column="1" 
+                                                   TextColor="LightSkyBlue"
+                                                   Text="{Binding Apply.Status}"
+                                                   HorizontalOptions="End"/>
+                                        </Grid>
+                                        <Grid Grid.Row="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0" 
+                                                   TextColor="Gray" FontSize="12"
+                                                   Text="{Binding Info.ActivityPlace}"/>
+                                            <StackLayout Grid.Column="1" 
+                                                         Orientation="Horizontal"  HorizontalOptions="End">
+                                                <Label Text="{Binding Apply.CurrentNumber}" TextColor="Gray" FontSize="12"/>
+                                                <Label Text="/" TextColor="Gray" FontSize="12"/>
+                                                <Label Text="{Binding Apply.RequestNumber}" TextColor="Gray" FontSize="12"/>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Button Text="创建新活动" BackgroundColor="{StaticResource MainGreen}"
+                        Margin="8,0,8,0" CornerRadius="8" TextColor="White"
+                        VerticalOptions="EndAndExpand" FontSize="Body"
+                        Command="{Binding CreateActivityCommand}"/>
+                <Button Text="申请活动开展" BackgroundColor="{StaticResource MainGreen}"
+                        Margin="8,0,8,0" CornerRadius="8" TextColor="White"
+                        VerticalOptions="EndAndExpand" FontSize="Body"
+                        Command="{Binding CreateApplyCommand}"/>
+                <Button Text="退出登录" BackgroundColor="OrangeRed"
+                        Margin="8,0,8,8" CornerRadius="8" TextColor="White"
+                        VerticalOptions="EndAndExpand" FontSize="Body"
+                        Command="{Binding QuitCommand}"/>
+            </StackLayout>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

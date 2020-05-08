@@ -6,46 +6,42 @@
              mc:Ignorable="d"
              x:Class="NEUVolunteer.Views.LoginPage"
              BindingContext="{Binding LoginPageViewModel,Source={StaticResource ViewModelLocator}}">
-    
-    
-    <Grid BackgroundColor="LightSteelBlue">
+
+
+    <Grid BackgroundColor="White">
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-            <Image Source="img.png" 
-               HeightRequest="80" 
-               WidthRequest="80"
+            <Image Source="logo.png" 
+               HeightRequest="100" 
+               WidthRequest="100"
                Aspect="AspectFit"
                Margin="0,0,0,20"/>
 
-            <Grid   WidthRequest="200">
+            <Grid WidthRequest="200" BackgroundColor="White">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="1"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <BoxView CornerRadius="5" BackgroundColor="White" Grid.RowSpan="3"/>
                 <Entry x:Name ="username"
+                       Grid.Row="0"
                         Placeholder="用户名" 
                        ClearButtonVisibility="WhileEditing"
                        Text="{Binding UserName}"/>
-                <BoxView HeightRequest="1"
-                          BackgroundColor="LightGray"
-                          Opacity="0.4"
-                          Grid.Row="1"/>
                 <Entry Placeholder="密码"
                        x:Name="password"
-                        IsSpellCheckEnabled="false"
-                        IsTextPredictionEnabled="false"
-                        IsPassword="true"
-                        Grid.Row="2"
+                       IsSpellCheckEnabled="false"
+                       IsTextPredictionEnabled="false"
+                       IsPassword="true"
+                       Grid.Row="1"
                        ClearButtonVisibility="WhileEditing"
                        Text="{Binding Password}"
-                       />
+                />
 
             </Grid>
             <ImageButton 
-                         Source="login2.png"
-                         WidthRequest="40"
-                         HeightRequest="40"
+                         Source="login.png"
+                         WidthRequest="60"
+                         HeightRequest="60"
                          HorizontalOptions="Center"
                          BackgroundColor="Transparent"
                          Aspect="AspectFit"

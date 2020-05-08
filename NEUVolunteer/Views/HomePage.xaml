@@ -219,19 +219,26 @@
                         <Label Text="QQ：" TextColor="Black"/>
                         <Label Text="{Binding UserQQ}" TextColor="Gray"/>
                     </StackLayout>
-                    <Button Text="确认修改" Command="{Binding RenewCommand}"
-                            TextColor="White"
-                            BackgroundColor="#2294f0"
-                            Margin="8,0,8,0" CornerRadius="8"
-                            FontSize="Body"
-                            HorizontalOptions="FillAndExpand"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="累积志愿小时：" TextColor="Black"/>
+                        <Label Text="4h" TextColor="Gray"/>
+                    </StackLayout>
                     <Button Text="退出账号" Command="{Binding QuitCommand}"
                             TextColor="White"
                             BackgroundColor="OrangeRed"
-                            Margin="8,0,8,0" CornerRadius="8"
+                            Margin="8" CornerRadius="8"
                             FontSize="Body"
                             HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <BoxView Color="Gray" HeightRequest="1"  
+                             HorizontalOptions="FillAndExpand"
+                             Margin="8"/>
+                    <Label Text="我的活动记录：" TextColor="Black"
+                           Margin="8"/>
+                </StackLayout>
+
                 <ListView  ItemsSource="{Binding MyApplyDetailCollection}">
                     <ListView.Behaviors>
                         <b:EventHandlerBehavior EventName="ItemTapped">
