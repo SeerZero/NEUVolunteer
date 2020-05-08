@@ -9,6 +9,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <vm:ViewModelLocator x:Key="ViewModelLocator"/>
+            <Color x:Key="MainGreen">#45b97c</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

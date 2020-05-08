@@ -774,6 +774,7 @@ D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\Xamarin.Forms.Xaml.
 D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\Xamarin.Forms.Extended.InfiniteScrolling.dll
 D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\NEUVolunteer.dll
 D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\bin\x86\Debug\NEUVolunteer.pdb
+D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\obj\x86\Debug\NEUVolunteer.UWP.csprojAssemblyReference.cache
 D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\obj\x86\Debug\App.g.i.cs
 D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\obj\x86\Debug\App.g.cs
 D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\obj\x86\Debug\MainPage.g.i.cs
@@ -899,4 +900,3 @@ D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\obj\x86\Debug\qualifiers.txt.inte
 D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\obj\x86\Debug\ProjectArchitectures.txt
 D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636160427180000000.json
-D:\VPA\workspace\NEUVolunteer\NEUVolunteer.UWP\obj\x86\Debug\NEUVolunteer.UWP.csprojAssemblyReference.cache

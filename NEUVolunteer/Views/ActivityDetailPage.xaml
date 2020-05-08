@@ -4,9 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:b="clr-namespace:Behaviors;assembly=Behaviors"
+             xmlns:ls="clr-namespace:NEUVolunteer.Services;assembly=NEUVolunteer"
              mc:Ignorable="d"
              x:Class="NEUVolunteer.Views.ActivityDetailPage"
-             BindingContext="{Binding ActivityDetailPageViewModel, Source={StaticResource ViewModelLocator}}">
+             BindingContext="{Binding ActivityDetailPageViewModel, Source={StaticResource ViewModelLocator}}"
+            ls:NavigationContext.NavigationParameter="{Binding ApplyDetail}">
     <ContentPage.Behaviors>
         <b:EventHandlerBehavior EventName="Appearing">
             <b:ActionCollection>

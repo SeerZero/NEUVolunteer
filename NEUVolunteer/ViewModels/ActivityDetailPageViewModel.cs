@@ -14,6 +14,13 @@ namespace NEUVolunteer.ViewModels
 
         private IDBService _dbService;
 
+        private ApplyDetail _applyDetail;
+
+        public ApplyDetail ApplyDetail {
+            get => _applyDetail;
+            set => Set(nameof(ApplyDetail), ref _applyDetail, value);
+        }
+
         private Apply _apply;
 
         public Apply Apply
@@ -49,14 +56,14 @@ namespace NEUVolunteer.ViewModels
                 await _dbService.InitializeAsync();
             }
 
-            //var volunteer = await _dbService.GetVolunteerAsync(1);
-            //User.UserId = volunteer.VolunteerId;
-            //User.IsManager = false;
-            var manager = await _dbService.GetManagerAsync(1);
-            User.UserId = manager.ManagerId;
-            User.IsManager = true;
-            Apply = await _dbService.GetApplyAsync(1);
-            ActivityInfo = await _dbService.GetActivityInfoAsync(Apply.ApplyActivityId);
+            var volunteer = await _dbService.GetVolunteerAsync(1);
+            User.UserId = volunteer.VolunteerId;
+            User.IsManager = false;
+            //var manager = await _dbService.GetManagerAsync(1);
+            //User.UserId = manager.ManagerId;
+            //User.IsManager = true;
+            Apply = ApplyDetail.Apply;
+            ActivityInfo = ApplyDetail.Info;
             Manager = await _dbService.GetManagerAsync(Apply.ApplyManagerId);
             TypeName = await _dbService.GetActivityTypeNameAsync(ActivityInfo.ActivityTypeId);
 

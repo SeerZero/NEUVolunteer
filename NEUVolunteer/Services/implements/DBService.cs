@@ -72,7 +72,10 @@ namespace NEUVolunteer.Services.Implements
         public async Task<Apply> GetApplyAsync(int id) =>
             await Connection.Table<Apply>().FirstOrDefaultAsync(p => p.ApplyId.Equals(id));
 
-        public async Task StopApplyAsync(int id)
+        public async Task<IList<Apply>> GetApplyListAsync() =>
+            await Connection.Table<Apply>().ToListAsync();
+
+            public async Task StopApplyAsync(int id)
         {
             var status_sql = "update Apply set Status = '报名截止' where ApplyId = " + id;
             await Connection.QueryAsync<Apply>(status_sql);

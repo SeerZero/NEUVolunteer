@@ -33,6 +33,8 @@ namespace NEUVolunteer.Services
         public static readonly string AdminPage = nameof(AdminPage);
         public static readonly string NewsReadPage = nameof(NewsReadPage);
         public static readonly string ActivityReadPage = nameof(ActivityReadPage);
+        public static readonly string ActivityDetailPage = nameof(ActivityDetailPage);
+
         public static readonly Dictionary<string, Type> PageKeyTypeDictionary =
             new Dictionary<string, Type> {
                 {WelcomePage, typeof(WelcomePage)},
@@ -40,7 +42,8 @@ namespace NEUVolunteer.Services
                 {AdminPage,typeof(AdminPage) },
                 {HomePage,typeof(HomePage) },
                 {NewsReadPage, typeof(NewsReadPage) },
-                {ActivityReadPage,typeof(ActivityReadPage) }
+                {ActivityReadPage,typeof(ActivityReadPage) },
+                {ActivityDetailPage, typeof(ActivityDetailPage)}
             };
     }
 }

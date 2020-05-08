@@ -18,6 +18,8 @@ namespace NEUVolunteer.Services
 
         Task<Apply> GetApplyAsync(int id);
 
+        Task<IList<Apply>> GetApplyListAsync();
+
         //设置一个Apply的状态为报名截止
         Task StopApplyAsync(int id);
 
@@ -60,6 +62,6 @@ namespace NEUVolunteer.Services
         /// <summary>
         /// 版本。
         /// </summary>
-        public const int Version = 7;
+        public const int Version = 8;
     }
 }

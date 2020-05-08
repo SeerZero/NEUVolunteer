@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.ComponentModel.Design;
+using System.Threading.Tasks;
+using NEUVolunteer.Models;
+using Xamarin.Forms.Internals;
 
 namespace NEUVolunteer.ViewModels
 {
@@ -16,6 +19,7 @@ namespace NEUVolunteer.ViewModels
             navigationService)
         {
             _dBService = dBService;
+            ItemCollection = new ObservableCollection<ApplyDetail>();
         }
         private IDBService _dBService;
         /// <summary>
@@ -63,7 +67,7 @@ namespace NEUVolunteer.ViewModels
         public RelayCommand InformationPageCommand =>
             _informationPageCommand ?? (_informationPageCommand = new RelayCommand(
                 async () =>
-                {
+                {   
                     InformationPageVisible = true;
                     ActivityPageVisible = false;
                     MyPageVisible = false;
@@ -90,13 +94,15 @@ namespace NEUVolunteer.ViewModels
                 InformationPageVisible = false;
                 ActivityPageVisible = true;
                 MyPageVisible = false;
+                /*
                 var activities =
                     await _dBService.GetActivityInfosAsync();
                 ActivityItemCollection.Clear();
                 foreach (var article in activities)
                 {
                     ActivityItemCollection.Add(new ActivityItemViewModel(_navigationService, article));
-                }
+                }*/
+                await GetItems();
             }));
         private RelayCommand _activityPageCommand;
 
@@ -131,17 +137,28 @@ namespace NEUVolunteer.ViewModels
                         NewsItemCollection.Add(new NewsItemViewModel(_navigationService, article));
                     }
                 }
-                else if (ActivityPageVisible)
-                {
+                else if (ActivityPageVisible) {
+                    /*
                     var activities =
                         await _dBService.GetActivityInfosAsync();
                     ActivityItemCollection.Clear();
                     foreach (var article in activities)
                     {
                         ActivityItemCollection.Add(new ActivityItemViewModel(_navigationService, article));
-                    }
+                    }*/
+                    await GetItems();
                 }
             }));
+
+        internal async Task GetItems() {
+            ItemCollection.Clear();
+            var list = await _dBService.GetApplyListAsync();
+            foreach (var apply in list) {
+                var info = await _dBService.GetActivityInfoAsync(apply.ApplyActivityId);
+                ItemCollection.Add(new ApplyDetail(apply, info));
+            }
+        }
+
         private RelayCommand _appearCommand;
 
         public ObservableCollection<NewsItemViewModel>
@@ -152,6 +169,18 @@ namespace NEUVolunteer.ViewModels
         {
             get;
         } = new ObservableCollection<ActivityItemViewModel>();
+
+        public ObservableCollection<ApplyDetail> ItemCollection { get; set; }
+
+        private RelayCommand<ApplyDetail> _applyItemTappedCommand;
+
+        public RelayCommand<ApplyDetail> ApplyItemTappedCommand =>
+            _applyItemTappedCommand ?? (_applyItemTappedCommand = new RelayCommand<ApplyDetail>(detail => ApplyItemTappedCommandFunction(detail)));
+
+        internal void ApplyItemTappedCommandFunction(ApplyDetail detail) {
+           _navigationService.NavigationTo(NavigationServiceConstants.ActivityDetailPage, detail);
+        }
+
 
     }
 }

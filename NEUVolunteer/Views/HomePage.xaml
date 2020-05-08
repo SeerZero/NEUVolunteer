@@ -4,10 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:b="clr-namespace:Behaviors;assembly=Behaviors"
-             xmlns:bindingConverters="clr-namespace:NEUVolunteer.Models.BindingConverters;assembly=NEUVolunteer"
+             xmlns:bc="clr-namespace:NEUVolunteer.Models.BindingConverters;assembly=NEUVolunteer"
              mc:Ignorable="d"
              x:Class="NEUVolunteer.Views.HomePage"
              BindingContext="{Binding HomePageViewModel,Source={StaticResource ViewModelLocator}}">
+
     <ContentPage.Behaviors>
         <b:EventHandlerBehavior EventName="Appearing">
             <b:ActionCollection>
@@ -30,8 +31,8 @@
                 <Setter Property="Placeholder" Value="Search"/>
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
             </Style>
-
-            <bindingConverters:NotConverter x:Key="NotConverter"/>
+            <bc:ItemToDetailConverter x:Key="ItemToWordConverter"/>
+            <bc:NotConverter x:Key="NotConverter"/>
 
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -143,19 +144,22 @@
             </StackLayout>
 
 
-
-
-
             <StackLayout x:Name="ActivityPage" Grid.Row="2" IsVisible="{Binding ActivityPageVisible}">
                 <Grid>
-                    <ListView ItemsSource="{Binding ActivityItemCollection}" SelectionMode="None">
+                    <ListView ItemsSource="{Binding ItemCollection}" SelectionMode="None">
+                        <ListView.Behaviors>
+                            <b:EventHandlerBehavior EventName="ItemTapped">
+                                <b:ActionCollection>
+                                    <b:InvokeCommandAction
+                                        Command="{Binding ApplyItemTappedCommand}"
+                                        Converter="{StaticResource ItemToWordConverter}"/>
+                                </b:ActionCollection>
+                            </b:EventHandlerBehavior>
+                        </ListView.Behaviors>
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <Grid Padding="16">
-                                        <Grid.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding SelectCommand}"/>
-                                        </Grid.GestureRecognizers>
+                                    <Grid Margin="16">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="1"/>
@@ -163,15 +167,32 @@
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0">
                                             <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
-                                            <Label  Grid.Column="0"
-                                                TextColor="Black"
-                                                Text="{Binding Activitys.ActivityName}"/>
+                                            <Label Grid.Column="0"
+                                                   TextColor="Black" FontSize="16"
+                                                   Text="{Binding Info.ActivityName}"/>
+                                            <Label Grid.Column="1" 
+                                                   TextColor="LightSkyBlue"
+                                                   Text="{Binding Apply.Status}"
+                                                   HorizontalOptions="End"/>
                                         </Grid>
-                                        <Label Grid.Row="2" 
-                                           TextColor="Gray"
-                                            Text="{Binding  Activitys.ActivityPlace}"/>
+                                        <Grid Grid.Row="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0" 
+                                                   TextColor="Gray" FontSize="12"
+                                                   Text="{Binding Info.ActivityPlace}"/>
+                                            <StackLayout Grid.Column="1" 
+                                                         Orientation="Horizontal"  HorizontalOptions="End">
+                                                <Label Text="{Binding Apply.CurrentNumber}" TextColor="Gray" FontSize="12"/>
+                                                <Label Text="/" TextColor="Gray" FontSize="12"/>
+                                                <Label Text="{Binding Apply.RequestNumber}" TextColor="Gray" FontSize="12"/>
+                                            </StackLayout>
+                                        </Grid>
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>
