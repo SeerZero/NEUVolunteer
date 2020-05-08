@@ -1,1 +1,4 @@
-# NEUVolunteerApp & NEUVolunteerMini
+# NEUVolunteerApp
+##测试账号：
+###管理员：tsy529 123456
+###普通用户：20181234 123456
