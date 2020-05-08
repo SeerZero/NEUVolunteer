@@ -7,19 +7,23 @@ using System.Text;
 using System.ComponentModel.Design;
 using System.Threading.Tasks;
 using NEUVolunteer.Models;
+using Xamarin.Essentials;
 using Xamarin.Forms.Internals;
 
 namespace NEUVolunteer.ViewModels
 {
     public class HomePageViewModel : NavigationViewModelBase
     {
+        Volunteer _volunteer;
+
         public HomePageViewModel(INavigationService navigationService,
             IDBService dBService
             ) : base(
             navigationService)
         {
             _dBService = dBService;
-            ItemCollection = new ObservableCollection<ApplyDetail>();
+            AllApplyDetailCollection = new ObservableCollection<ApplyDetail>();
+            MyApplyDetailCollection = new ObservableCollection<ApplyDetail>();
         }
         private IDBService _dBService;
         /// <summary>
@@ -102,7 +106,7 @@ namespace NEUVolunteer.ViewModels
                 {
                     ActivityItemCollection.Add(new ActivityItemViewModel(_navigationService, article));
                 }*/
-                await GetItems();
+                await GetAllApplyDetail();
             }));
         private RelayCommand _activityPageCommand;
 
@@ -125,6 +129,14 @@ namespace NEUVolunteer.ViewModels
             _appearCommand ??
             (_appearCommand = new RelayCommand(async () =>
             {
+                int s = Preferences.Get("User", 0);
+                _volunteer = await _dBService.GetVolunteerAsync(Preferences.Get("User", 0));
+
+                UserName = _volunteer.VolunteerName;
+                UserNumber = _volunteer.VolunteerPhone;
+                UserQQ = _volunteer.VolunteerQQ;
+                UserSex = _volunteer.VolunteerSex;
+
                 if (InformationPageVisible)
                 {
                     var news =
@@ -133,7 +145,6 @@ namespace NEUVolunteer.ViewModels
                     NewsItemCollection.Clear();
                     foreach (var article in news)
                     {
-
                         NewsItemCollection.Add(new NewsItemViewModel(_navigationService, article));
                     }
                 }
@@ -146,16 +157,19 @@ namespace NEUVolunteer.ViewModels
                     {
                         ActivityItemCollection.Add(new ActivityItemViewModel(_navigationService, article));
                     }*/
-                    await GetItems();
+                    await GetAllApplyDetail();
+                }
+                else {
+                    await GetMyApplyDetail();
                 }
             }));
 
-        internal async Task GetItems() {
-            ItemCollection.Clear();
+        internal async Task GetAllApplyDetail() {
+            AllApplyDetailCollection.Clear();
             var list = await _dBService.GetApplyListAsync();
             foreach (var apply in list) {
                 var info = await _dBService.GetActivityInfoAsync(apply.ApplyActivityId);
-                ItemCollection.Add(new ApplyDetail(apply, info));
+                AllApplyDetailCollection.Add(new ApplyDetail(apply, info));
             }
         }
 
@@ -170,7 +184,7 @@ namespace NEUVolunteer.ViewModels
             get;
         } = new ObservableCollection<ActivityItemViewModel>();
 
-        public ObservableCollection<ApplyDetail> ItemCollection { get; set; }
+        public ObservableCollection<ApplyDetail> AllApplyDetailCollection { get; set; }
 
         private RelayCommand<ApplyDetail> _applyItemTappedCommand;
 
@@ -181,6 +195,75 @@ namespace NEUVolunteer.ViewModels
            _navigationService.NavigationTo(NavigationServiceConstants.ActivityDetailPage, detail);
         }
 
+
+        //***************我的**************************
+
+        public string UserSex
+        {
+            get => _userSex;
+            set =>
+                Set(nameof(UserSex), ref _userSex,
+                    value);
+        }
+        private string _userSex;
+        public long UserNumber { 
+            get => _userNumber;
+            set => Set(nameof(UserNumber), ref _userNumber,
+                    value);
+        }
+        private long _userNumber;
+        public long UserQQ {
+            get => _userQQ;
+            set => Set(nameof(UserQQ), ref _userQQ, value);
+        }
+        private long _userQQ;
+        public string UserName {
+            get => _userName;
+            set => Set(nameof(UserName), ref _userName, value);
+        }
+        private string _userName;
+
+        public ObservableCollection<ApplyDetail> MyApplyDetailCollection { get; set; }
+
+        public RelayCommand QuitCommand =>
+            _quitCommand ?? (_quitCommand = new RelayCommand(
+                () =>
+                {
+                    _navigationService.NavigationTo(NavigationServiceConstants.LoginPage, false);
+                }));
+        private RelayCommand _quitCommand;
+
+        public RelayCommand RenewCommand =>
+            _renewCommand ?? (_renewCommand = new RelayCommand(
+                () =>
+                {
+
+                }));
+        private RelayCommand _renewCommand;
+
+        public RelayCommand MyPageCommand =>
+            _myPageCommand ?? (_myPageCommand =
+                new RelayCommand(async () => await MyPageCommandFunction()));
+
+        private async Task MyPageCommandFunction() {
+            InformationPageVisible = false;
+            ActivityPageVisible = false;
+            MyPageVisible = true;
+
+            await GetMyApplyDetail();
+        }
+
+        private RelayCommand _myPageCommand;
+
+        internal async Task GetMyApplyDetail()
+        {
+            MyApplyDetailCollection.Clear();
+            var list = await _dBService.GetMyApplyAsync(); 
+            foreach (var apply in list) {
+                var info = await _dBService.GetActivityInfoAsync(apply.ApplyActivityId);
+                MyApplyDetailCollection.Add(new ApplyDetail(apply, info));
+            }
+        }
 
     }
 }

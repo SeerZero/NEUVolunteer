@@ -72,6 +72,17 @@ namespace NEUVolunteer.Services.Implements
         public async Task<Apply> GetApplyAsync(int id) =>
             await Connection.Table<Apply>().FirstOrDefaultAsync(p => p.ApplyId.Equals(id));
 
+        public async Task<IList<Apply>> GetMyApplyAsync() {
+            var myApplyList = new List<Apply>();
+            var list = await Connection.Table<VolunteerInApply>().Where(p => p.VolunteerId.Equals(User.UserId)).ToListAsync();
+            foreach (var item in list) {
+                var apply = await Connection.Table<Apply>().FirstOrDefaultAsync(p => p.ApplyId.Equals(item.ApplyId));
+                myApplyList.Add(apply);
+            }
+
+            return myApplyList;
+        }
+
         public async Task<IList<Apply>> GetApplyListAsync() =>
             await Connection.Table<Apply>().ToListAsync();
 
@@ -122,8 +133,14 @@ namespace NEUVolunteer.Services.Implements
         public async Task<Manager> GetManagerAsync(int id) =>
             await Connection.Table<Manager>().FirstOrDefaultAsync(p => p.ManagerId.Equals(id));
 
+        public async Task<Manager> GetManagerAsync(string account) =>
+            await Connection.Table<Manager>().FirstOrDefaultAsync(p => p.ManagerAccount.Equals(account));
+
         public async Task<Volunteer> GetVolunteerAsync(int id) =>
             await Connection.Table<Volunteer>().FirstOrDefaultAsync(p => p.VolunteerId.Equals(id));
+
+        public async Task<Volunteer> GetVolunteerAsync(string studentId) =>
+            await Connection.Table<Volunteer>().FirstOrDefaultAsync(p => p.VolunteerStudentId.Equals(studentId));
 
         public async Task<bool> CanVolunteerInApply(int applyId)
         {

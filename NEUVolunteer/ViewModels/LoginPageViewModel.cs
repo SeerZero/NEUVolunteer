@@ -8,15 +8,15 @@ namespace NEUVolunteer.ViewModels
 {
     public class LoginPageViewModel : NavigationViewModelBase
     {
-        public LoginPageViewModel(INavigationService navigationService, IVolunteer x, IManager y, IAlertService alertService) : base(
-            navigationService)
-        {
-            _vi = x;
-            _ = _vi.Init();
-            _mi = y;
+        public LoginPageViewModel(INavigationService navigationService, IAlertService alertService, IDBService dbService) : base(
+            navigationService) {
+            _dbService = dbService;
             _alertService = alertService;
             
         }
+
+        private IDBService _dbService;
+
         private IVolunteer _vi;
         private IManager _mi;
         private IAlertService _alertService;
@@ -45,7 +45,7 @@ namespace NEUVolunteer.ViewModels
             else if (_username[0] >= 'a' && _username[0] <= 'z' || _username[0] >= 'A' && _username[0] <= 'Z')
             {
                 //管理员
-                Manager x = await _mi.Getpassword(_username);
+                Manager x = await _dbService.GetManagerAsync(_username);
                 if (x == null || x.ManagerPassword != _password)
                 {
                     //登录失败
@@ -55,6 +55,8 @@ namespace NEUVolunteer.ViewModels
                 else
                 {
                     //密码正确，跳转界面
+                    User.UserId = x.ManagerId;
+                    User.IsManager = true;
                     await _alertService.ShowAlertAsync("登录成功", "成功", "确认");
                     _navigationService.NavigationTo(NavigationServiceConstants.AdminPage, false);
                 }
@@ -64,7 +66,7 @@ namespace NEUVolunteer.ViewModels
             else
             {
                 //志愿者
-                Volunteer x = await _vi.Getpassword(_username);
+                Volunteer x = await _dbService.GetVolunteerAsync(_username);
                 if (x == null || x.VolunteerPassword != _password)
                 {
                     //登录失败
@@ -73,6 +75,9 @@ namespace NEUVolunteer.ViewModels
                 else
                 {
                     //密码正确，跳转界面
+                    User.UserId = x.VolunteerId;
+                    User.IsManager = false;
+                    Preferences.Set("user", x.VolunteerId);
                     await _alertService.ShowAlertAsync("登录成功", "成功", "确认");
                     _navigationService.NavigationTo(NavigationServiceConstants.HomePage, false);
 

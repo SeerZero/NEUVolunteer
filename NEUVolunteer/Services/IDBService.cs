@@ -18,6 +18,8 @@ namespace NEUVolunteer.Services
 
         Task<Apply> GetApplyAsync(int id);
 
+        Task<IList<Apply>> GetMyApplyAsync();
+
         Task<IList<Apply>> GetApplyListAsync();
 
         //设置一个Apply的状态为报名截止
@@ -36,7 +38,11 @@ namespace NEUVolunteer.Services
 
         Task<Manager> GetManagerAsync(int id);
 
+        Task<Manager> GetManagerAsync(string account);
+
         Task<Volunteer> GetVolunteerAsync(int id);
+
+        Task<Volunteer> GetVolunteerAsync(string studentId);
 
         Task<bool> CanVolunteerInApply(int applyId);
 
@@ -49,6 +55,7 @@ namespace NEUVolunteer.Services
         Task<News> GetNewsAsync(int id);
 
         Task<IList<News>> GetAllNewsAsync();
+
     }
 
     public static class DBConstants
