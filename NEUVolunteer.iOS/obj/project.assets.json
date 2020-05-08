@@ -7575,24 +7575,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\wwei\\.nuget\\packages\\": {},
+    "C:\\Users\\tsy529\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\vs2019\\Volunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj",
+      "projectUniqueName": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj",
       "projectName": "NEUVolunteer.iOS",
-      "projectPath": "D:\\vs2019\\Volunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj",
-      "packagesPath": "C:\\Users\\wwei\\.nuget\\packages\\",
-      "outputPath": "D:\\vs2019\\Volunteer\\NEUVolunteer.iOS\\obj\\",
+      "projectPath": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer.iOS\\NEUVolunteer.iOS.csproj",
+      "packagesPath": "C:\\Users\\tsy529\\.nuget\\packages\\",
+      "outputPath": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\wwei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tsy529\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -7606,8 +7606,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\vs2019\\Volunteer\\NEUVolunteer\\NEUVolunteer.csproj": {
-              "projectPath": "D:\\vs2019\\Volunteer\\NEUVolunteer\\NEUVolunteer.csproj"
+            "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj": {
+              "projectPath": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj"
             }
           }
         }

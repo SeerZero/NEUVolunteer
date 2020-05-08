@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using NEUVolunteer.Models;
-using NEUVolunteer.Services.interfaces;
+using NEUVolunteer.Services;
 
 namespace NEUVolunteer.ViewModels
 {

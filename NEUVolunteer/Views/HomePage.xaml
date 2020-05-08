@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:b="clr-namespace:Behaviors;assembly=Behaviors"
+             xmlns:bindingConverters="clr-namespace:NEUVolunteer.Models.BindingConverters;assembly=NEUVolunteer"
+             mc:Ignorable="d"
+             x:Class="NEUVolunteer.Views.HomePage"
+             BindingContext="{Binding HomePageViewModel,Source={StaticResource ViewModelLocator}}">
+    <ContentPage.Behaviors>
+        <b:EventHandlerBehavior EventName="Appearing">
+            <b:ActionCollection>
+                <b:InvokeCommandAction Command="{Binding AppearCommand}"/>
+            </b:ActionCollection>
+        </b:EventHandlerBehavior>
+    </ContentPage.Behaviors>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="NavigationButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource MainGreen}"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Opacity" Value="0.6"/>
+            </Style>
+
+            <Style x:Key="SearchBarStyle" TargetType="SearchBar">
+                <Setter Property="Opacity" Value="0.3"/>
+                <Setter Property="Placeholder" Value="Search"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+
+            <bindingConverters:NotConverter x:Key="NotConverter"/>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Row="0" 
+              BackgroundColor="{StaticResource MainGreen}"
+              Padding="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+
+            <Grid Grid.Row="0" 
+                  BackgroundColor="{StaticResource MainGreen}"
+                  ColumnSpacing="0"
+                  RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" 
+                        x:Name="InformationNavigationButton"
+                        Text="资讯" 
+                        Style="{StaticResource NavigationButtonStyle}"
+                        Command="{Binding InformationPageCommand}"
+                        IsEnabled="{Binding InformationPageVisible,
+                                                          Converter={StaticResource NotConverter}}"/>
+
+                <Button Grid.Column="1" 
+                        x:Name="ActivityNavigationButton"
+                        Text="活动" 
+                        Style="{StaticResource NavigationButtonStyle}" 
+                        Command="{Binding ActivityPageCommand}"
+                        IsEnabled="{Binding ActivityPageVisible,
+                                                          Converter={StaticResource NotConverter}}"/>
+
+                <Button Grid.Column="2" 
+                        x:Name="MyNavigationButton"
+                        Text="我的" 
+                        Style="{StaticResource NavigationButtonStyle}" 
+                        Command="{Binding MyPageCommand}"
+                        IsEnabled="{Binding MyPageVisible,
+                                                          Converter={StaticResource NotConverter}}"/>
+
+            </Grid>
+
+
+            <StackLayout x:Name="InformationPage" Grid.Row="1"  IsVisible="{Binding InformationPageVisible}">
+                <ListView ItemsSource="{Binding NewsItemCollection}" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="16">
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectCommand}"/>
+                                    </Grid.GestureRecognizers>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="1"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label  Grid.Column="0"
+                                                TextColor="Black"
+                                                Text="{Binding Newss.NewsTitle}"/>
+                                    </Grid>
+                                    <Label Grid.Row="2" 
+                                           Grid.Column="0"
+                                           TextColor="Gray"
+                                            Text="{Binding  Newss.NewsTime}"/>
+                                    <Label Grid.Row="2"
+                                           Grid.Column="1"
+                                           TextColor="Gray"
+                                           Text="{Binding Newss.NewsEditor}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+
+
+
+
+            <StackLayout x:Name="ActivityPage" Grid.Row="2" IsVisible="{Binding ActivityPageVisible}">
+                <Grid>
+                    <ListView ItemsSource="{Binding ActivityItemCollection}" SelectionMode="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Padding="16">
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding SelectCommand}"/>
+                                        </Grid.GestureRecognizers>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label  Grid.Column="0"
+                                                TextColor="Black"
+                                                Text="{Binding Activitys.ActivityName}"/>
+                                        </Grid>
+                                        <Label Grid.Row="2" 
+                                           TextColor="Gray"
+                                            Text="{Binding  Activitys.ActivityPlace}"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout x:Name="VocabularyPage" Grid.Row="2" IsVisible="{Binding VocabularyPageVisible}">
+                <ListView ItemsSource="{Binding NewWordsCollection}" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="16">
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding VisibleToggleCommand}"/>
+                                    </Grid.GestureRecognizers>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label  Grid.Column="0"
+                                                TextColor="Black"
+                                                Text="{Binding Spell}"/>
+
+                                        <Button Grid.Column="1"
+                                                Text="加入熟词" 
+                                                BorderColor="white"
+                                                BackgroundColor="White"
+                                                TextColor="Gray"
+                                                Command="{Binding ToOldWordCommand}"/>
+                                    </Grid>
+                                    <StackLayout Grid.Row="1" IsVisible="{Binding ExplanationVisible}">
+                                        <Label Text="{Binding UsPhonetic}"/>
+                                        <Label Text="{Binding Explanation}"/>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

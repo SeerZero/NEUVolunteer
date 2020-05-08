@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using NEUVolunteer.Models;
-using NEUVolunteer.Services.interfaces;
+using NEUVolunteer.Services;
 using Xamarin.Forms.Internals;
 
 namespace NEUVolunteer.ViewModels

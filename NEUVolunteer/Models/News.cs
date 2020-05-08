@@ -19,7 +19,6 @@ namespace NEUVolunteer.Models
         [SQLite.Column("NewsEditor")]
         public string NewsEditor { get; set; }
 
-
         [SQLite.Column("NewsContent")]
         public string NewsContent { get; set; }
 

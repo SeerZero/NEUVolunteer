@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\vs2019\\Volunteer\\NEUVolunteer.UWP\\NEUVolunteer.UWP.csproj": {}
+    "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer.UWP\\NEUVolunteer.UWP.csproj": {}
   },
   "projects": {
-    "D:\\vs2019\\Volunteer\\NEUVolunteer.UWP\\NEUVolunteer.UWP.csproj": {
+    "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer.UWP\\NEUVolunteer.UWP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\vs2019\\Volunteer\\NEUVolunteer.UWP\\NEUVolunteer.UWP.csproj",
+        "projectUniqueName": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer.UWP\\NEUVolunteer.UWP.csproj",
         "projectName": "NEUVolunteer.UWP",
-        "projectPath": "D:\\vs2019\\Volunteer\\NEUVolunteer.UWP\\NEUVolunteer.UWP.csproj",
-        "packagesPath": "C:\\Users\\wwei\\.nuget\\packages\\",
-        "outputPath": "D:\\vs2019\\Volunteer\\NEUVolunteer.UWP\\obj\\",
+        "projectPath": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer.UWP\\NEUVolunteer.UWP.csproj",
+        "packagesPath": "C:\\Users\\tsy529\\.nuget\\packages\\",
+        "outputPath": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer.UWP\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -19,7 +19,7 @@
           "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\wwei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tsy529\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -33,8 +33,8 @@
         "frameworks": {
           "uap10.0.16299": {
             "projectReferences": {
-              "D:\\vs2019\\Volunteer\\NEUVolunteer\\NEUVolunteer.csproj": {
-                "projectPath": "D:\\vs2019\\Volunteer\\NEUVolunteer\\NEUVolunteer.csproj"
+              "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj": {
+                "projectPath": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj"
               }
             }
           }
@@ -95,21 +95,21 @@
         }
       }
     },
-    "D:\\vs2019\\Volunteer\\NEUVolunteer\\NEUVolunteer.csproj": {
+    "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\vs2019\\Volunteer\\NEUVolunteer\\NEUVolunteer.csproj",
+        "projectUniqueName": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj",
         "projectName": "NEUVolunteer",
-        "projectPath": "D:\\vs2019\\Volunteer\\NEUVolunteer\\NEUVolunteer.csproj",
-        "packagesPath": "C:\\Users\\wwei\\.nuget\\packages\\",
-        "outputPath": "D:\\vs2019\\Volunteer\\NEUVolunteer\\obj\\",
+        "projectPath": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer\\NEUVolunteer.csproj",
+        "packagesPath": "C:\\Users\\tsy529\\.nuget\\packages\\",
+        "outputPath": "D:\\VPA\\workspace\\NEUVolunteer\\NEUVolunteer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\wwei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tsy529\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -187,7 +187,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
